@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="899px" viewBox="0 0 1440 899" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 38</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1240" height="699"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="76.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="28" y="30" width="1184" height="639"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="1184" height="639" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-20" transform="translate(0.000000, -9493.000000)">
+            <g id="Group-38" transform="translate(100.000000, 9593.000000)">
+                <g id="Rectangle-3" opacity="0.550000012">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#000411" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <use id="Rectangle-4" stroke="#FDFDFD" mask="url(#mask-4)" stroke-width="4" xlink:href="#path-3"></use>
+                <g id="Page-1" transform="translate(559.000000, 289.000000)">
+                    <polygon id="Stroke-1" stroke-opacity="0.00784313771" stroke="#000000" stroke-width="1.33333335e-11" points="49 9 72.9999985 9 72.9999985 32.9999985 49 32.9999985"></polygon>
+                    <path d="M60.5000001,0 C27.1040001,0 0,27.1040001 0,60.5000001 C0,93.8960025 27.1040001,121 60.5000001,121 C93.8960025,121 121,93.8960025 121,60.5000001 C121,27.1039972 93.8960025,0 60.5000001,0 L60.5000001,0 Z M48.4,87.7250001 L48.4,33.275 L84.7000001,60.5000001 L48.4,87.7250001 L48.4,87.7250001 Z" id="Fill-2" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

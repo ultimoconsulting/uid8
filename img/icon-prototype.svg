@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="328px" height="329px" viewBox="0 0 328 329" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 29</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="240" height="159" rx="2"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="240" height="159" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M16.8148466,7.99099071 C16.917104,6.8913969 17.8861955,6 19.0063093,6 L69.9936907,6 C71.1017447,6 72.0923164,6.89706013 72.2048928,7.99099071 L73.235847,18.0090093 C73.3490061,19.1086031 72.5453286,20 71.4363375,20 L17.702464,20 C16.5954632,20 15.7814844,19.1029399 15.8832151,18.0090093 L16.8148466,7.99099071 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="57.3718413" height="14" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-20" transform="translate(-762.000000, -4341.000000)">
+            <g id="Group-29" transform="translate(764.000000, 4343.000000)">
+                <g id="Group-32">
+                    <g id="Group-11">
+                        <path d="M162.054938,324.398148 C251.555409,324.398148 324.109877,251.779149 324.109877,162.199074 C324.109877,72.618999 251.555409,0 162.054938,0 C72.5544673,0 0,72.618999 0,162.199074 C0,251.779149 72.5544673,324.398148 162.054938,324.398148 Z" id="Oval-37-Copy-5" stroke="#FBFAF8" stroke-width="3.51500005" fill="#4893FF"></path>
+                        <g id="Group-6" transform="translate(89.000000, 123.000000)">
+                            <g id="Group-5">
+                                <path d="M5.44173387,0 C2.43689516,0 0,2.47791915 0,5.53518798 L0,71.464812 C0,74.5202358 2.43689516,77 5.44173387,77 L30.5564516,77 C33.5631048,77 36,74.5202358 36,71.464812 L36,5.53518798 C36,2.47791915 33.5631048,0 30.5564516,0 L5.44173387,0 Z" id="Stroke-4-Copy" stroke="#FFFFFF" stroke-width="2.28" stroke-linejoin="round"></path>
+                                <path d="M17.5,69 C16.6717687,69 16,69.6717687 16,70.5 L16,70.5 C16,71.3282313 16.6717687,72 17.5,72 C18.3282313,72 19,71.3282313 19,70.5 L19,70.5 C19,69.6717687 18.3282313,69 17.5,69" id="Fill-8-Copy" fill="#FFFFFF"></path>
+                                <path d="M125.441734,0 C122.436895,0 120,2.47791915 120,5.53518798 L120,71.464812 C120,74.5202358 122.436895,77 125.441734,77 L150.556452,77 C153.563105,77 156,74.5202358 156,71.464812 L156,5.53518798 C156,2.47791915 153.563105,0 150.556452,0 L125.441734,0 Z" id="Stroke-4-Copy-2" stroke="#FFFFFF" stroke-width="2.28" stroke-linejoin="round"></path>
+                                <path d="M137.5,69 C136.671769,69 136,69.6717687 136,70.5 L136,70.5 C136,71.3282313 136.671769,72 137.5,72 C138.328231,72 139,71.3282313 139,70.5 L139,70.5 C139,69.6717687 138.328231,69 137.5,69" id="Fill-8-Copy-2" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                        <polygon id="Fill-26-Copy" fill="#FFFFFF" points="189 154.977578 189 150 193.315245 152.488789 197.628899 154.977578 193.315245 157.466367 189 159.955156"></polygon>
+                        <path d="M191,155 L143,155" id="Stroke-28-Copy" stroke="#FFFFFF" stroke-width="2.85" stroke-linejoin="round"></path>
+                    </g>
+                    <path d="M93.7,151 L120.3,151" id="Line-Copy-3" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square"></path>
+                    <path d="M93.7,155 L120.3,155" id="Line-Copy-4" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square"></path>
+                    <path d="M93.7,160 L120.3,160" id="Line-Copy-5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square"></path>
+                </g>
+                <g id="Group-25" transform="translate(47.000000, 78.000000)" stroke="#FFFFFF">
+                    <polygon id="Fill-2-Copy-3" stroke-width="0.700000048" fill="#FFFFFF" points="231.295 6 228.5 8.79500005 225.705 6 225 6.70499992 227.795 9.5 225 12.295 225.705 13 228.5 10.2049999 231.295 13 232 12.295 229.205 9.5 232 6.70499992"></polygon>
+                    <use id="Rectangle-8" mask="url(#mask-2)" stroke-width="6" xlink:href="#path-1"></use>
+                    <path d="M2.5,18.5 L238,18.5" id="Line" stroke-width="3" stroke-linecap="square"></path>
+                    <use id="Rectangle-9" mask="url(#mask-4)" stroke-width="6" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,310 @@
+
+@font-face {
+  font-family: 'GalanoGrotesque-Bold';
+  src: url('../fonts/GalanoGrotesque-Bold.eot?#iefix') format('embedded-opentype'),  
+  		url('../fonts/GalanoGrotesque-Bold.otf')  format('opentype'),
+  		url('../fonts/GalanoGrotesque-Bold.woff') format('woff'), 
+  		url('../fonts/GalanoGrotesque-Bold.ttf')  format('truetype'), 
+  		url('../fonts/GalanoGrotesque-Bold.svg#GalanoGrotesque-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face { 
+	font-family: 'GalanoGrotesque-Medium'; 
+	src: url('../fonts/GalanoGrotesque-Medium.eot?#iefix') format('embedded-opentype'), 
+		url('../fonts/GalanoGrotesque-Medium.otf') format('opentype'), 
+		url('../fonts/GalanoGrotesque-Medium.woff') format('woff'), 
+		url('../fonts/GalanoGrotesque-Medium.ttf') format('truetype'), 
+		url('../fonts/GalanoGrotesque-Medium.svg#GalanoGrotesque-Medium') format('svg'); 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+@font-face {
+  font-family: 'KGLifeisMessy';
+  src: url('../fonts/KGLifeisMessy.eot?#iefix') format('embedded-opentype'),  
+  		url('../fonts/KGLifeisMessy.woff') format('woff'), 
+  		url('../fonts/KGLifeisMessy.ttf')  format('truetype'), 
+  		url('../fonts/KGLifeisMessy.svg#KGLifeisMessy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+	/*background: #4893FF;*/
+	background: #4c95fb;
+	font-family: 'GalanoGrotesque-Medium'; 
+	color: #fff;
+}
+
+video {
+	width: 100%;
+}
+
+.fancy-green {
+	color: #67E5C1;
+	font-family: 'KGLifeisMessy';
+	font-size: 4em;
+}
+
+.rotate-right {
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+.rotate-left {
+	-ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+}
+
+/****** START: Header *****/
+
+header {
+	/*background: url('../img/kartki_desktop.png') no-repeat center bottom;
+	background-size: 1200px;*/
+	font-family: 'GalanoGrotesque-Bold';
+	margin-top: 1em;
+	min-height: 1000px;
+}
+
+header video {
+	width: 100%;
+}
+
+h1 {
+	font-size: 7em;
+}
+
+h1 .fancy-green {
+	font-size: 1em;
+}
+
+
+/****** START: Header *****/
+
+
+
+
+/****** START: Download Button *****/
+
+.download .btn {
+	background: url('../img/logo-apple.svg') no-repeat 80% 30%;
+	border: 1px solid #fff;
+	border-radius: 2em;
+	color: #fff;
+	font-family: 'GalanoGrotesque-Medium';
+	padding-left: 2em;
+	padding-right: 4em;
+}
+
+.download .btn span {
+}
+
+.download .btn .logo-apple {
+	background: url(../img/logo-apple.svg) no-repeat center center;
+	border-left: 1px solid #fff;
+	display: block;
+	float: right;
+	height: 21px;
+	width: 18px;
+}
+
+/****** END: Download Button *****/
+
+
+
+
+
+/****** START: #Bin *****/
+
+#bin {
+	min-height: 660px;
+	min-width: 660px;
+	position: relative;
+}
+
+#bin .desc {
+	position: absolute;
+	top: 0;
+}
+
+#bin .desc .fancy-box:nth-of-type(1) {
+	margin-top: 5em;
+}
+
+/****** END: #Bin *****/
+
+
+/****** START: #icons-uid8 *****/
+
+#icons-uid8 {
+	background: url('../img/iphone.png') no-repeat left center;
+	font-family: 'GalanoGrotesque-Bold';
+	font-size: 2em;
+}
+
+#icons-uid8 .desc
+{
+	align-items: center;
+    display: flex;
+    height: 320px;
+    justify-content: center;
+}
+
+#icons-uid8 .icons {
+	font-family: 'GalanoGrotesque-Medium'; 
+	font-size: 0.5em;
+	margin-bottom: 2em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#icons-uid8 .icons p {
+	margin-top: 1em;
+}
+
+/****** END: #icons-uid8 *****/
+
+
+/****** START: #meet-uid8 *****/
+
+#meet-uid8 {
+	text-align: center;
+}
+
+#meet-uid8 h2 {
+	font-size: 5em;
+}
+
+#meet-uid8 h3 {
+	font-size: 2.3em;
+	margin-bottom: 3em;
+}
+
+#meet-uid8 .gallery-container {
+	
+}
+
+#meet-uid8 .gallery-feature {
+	width: 14%;
+	float: left;
+}
+
+#meet-uid8 .gallery-feature .icon {
+	min-height: 72px;
+}
+
+
+#meet-uid8 .gallery-feature.active {
+	color: #67E5C1;
+	
+}
+
+#meet-uid8 .animation img {
+	width: 100%;
+}
+
+#meet-uid8 .user {
+	margin-bottom: 5em;
+}
+
+#meet-uid8 .user img {
+	max-height: 180px;
+}
+
+#meet-uid8 .user div {
+	margin: 1em auto;
+}
+
+/****** START: #inspirations *****/
+
+#inspirations {
+	background: url('../img/bg-blog.png') center center no-repeat;
+	background-size: cover;
+	min-height: 600px;
+}
+
+#inspirations h2 {
+	font-family: 'GalanoGrotesque-Bold';
+	font-size: 3em;
+}
+
+#inspirations input, #inspirations button {
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 0.5em 1em;
+	width: 100%;
+}
+
+#inspirations button {
+	border-radius: 2em;
+}
+
+#inspirations .newsletter {
+	margin-top: 10em;
+	margin-bottom: 10em;
+}
+
+/****** END: #inspirations *****/
+
+
+/****** START: #video *****/
+
+#video h2 {
+	color: #3E64CF;
+	font-family: 'KGLifeisMessy';
+	font-size: 4em;
+	margin-top: 2em;
+	text-align: center;
+}
+
+#video .download {
+	font-size: 2em;
+}
+
+/****** START: #video *****/
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+    #icons-uid8 {
+    	text-align: center;
+    }
+
+    #icons-uid8 .desc {
+    	height: auto;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}

@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,49 +20,171 @@
   </head>
   <body>
   <div class="wrapper">
-    <div class="container-fluid">
+    
       <header>
-        <div class="row">
-          <div class="col-md-2 col-sm-6">
-            logo
-          </div>
-          <div class="col-md-2 col-md-offset-8 col-sm-6">
-            download
-          </div>
-        </div>
-        <div class="row">
-            <div class="page-header">
-              <h1>paper so far was designers best <span>friend</span></h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 col-sm-6">
+              <a href="#"><img src="img/logo.svg" alt="UID8" /></a>
             </div>
+            <div class="col-md-2 col-md-offset-8 col-sm-6 download">
+              <a href="#" class="btn" role="button"><span>Download</span></a>
+            </div>
+          </div>
+          <div class="row">
+              <div class="page-header">
+                <h1>paper so far was designers best <span class="fancy-green">friend</span></h1>
+              </div>
+          </div>
         </div>
+        <div class="container-fluid">  
+          <div class="row">
+            <video poster="img/kartki-desktop.png" class="bgvid" autoplay muted>
+              <source src="video/reka.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>  
       </header>  
         
       <section id="bin">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-6 col-sm-12">sometimes repetitevely until...</div>           
+        <div class="container-fluid">  
+          <div class="row">
+            <video poster="img/smietnik.png" class="bgvid" autoplay muted>
+              <source src="video/kosz1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>  
+        <div class="container desc">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6 col-sm-12 fancy-green rotate-right">sometimes repetitevely until...</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left">YOU Got it right!</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6 hidden-sm hidden-xs fancy-green rotate-right">BUT!</div>
+          </div>
         </div>
       </section>  
       <!-- end of #bin -->
 
-      <section id="uid8-icons">
-        <div class="row">
-
+      <section id="icons-uid8">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 desc">Drawing UI on paper is just the beginning...</div>
+            <div class="col-md-5 col-sm-12 icons"><img src="img/icon-draw.svg" alt="" /><p>Paper sketching</p></div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 desc">You first have to convert your sketch  to wireframes</div>
+            <div class="col-md-5 col-sm-12 icons"><img src="img/icon-wireframe.svg" alt="" /><p>Wireframing / HIFI</p></div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 desc">And then get another app to build a clickable prototype</div>
+            <div class="col-md-5 col-sm-12 icons"><img src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
+          </div>
         </div>
       </section>  
       <!-- end of #uid8-icons -->
 
       <section id="meet-uid8">
-        
+        <div class="container">
+          <h2>Meet UID8</h2>
+          <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
+          
+          <div class="row gallery-container">
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-pencil.svg" alt="iPad Pro & Apple Pencil" /></div>
+              <div class="desc">iPad Pro &amp; Apple Pencil</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-platform.svg" alt="any platform" /></div>
+              <div class="desc">any platform</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-tools.svg" alt="wide canvas" /></div>
+              <div class="desc">tools with sticky colors</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-canvas.svg" alt="wide canvas" /></div>
+              <div class="desc">wide canvas</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-scissors.svg" alt="duplicate &amp; copy" /></div>
+              <div class="desc">duplicate &amp; copy</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-export.svg" alt="export" /></div>
+              <div class="desc">export</div>
+            </div>
+            <div class="gallery-feature">
+              <div class="icon"><img src="img/icon-interactions.svg" alt="interactions" /></div>
+              <div class="desc">interactions</div>
+            </div>
+          </div>
+
+          <div class="row animation">
+            <img src="img/ipad.png" alt="" />
+          </div>
+        </div>
+
+        <h3>Superhandy for</h3>
+        <div class="row users">
+          <div class="col-md-4 col-sm-12 user">
+            <img src="img/icon-product-manager.svg" alt="Product Manager" />
+            <div>Product Managers</div>
+          </div>
+          <div class="col-md-4 col-sm-12 user">
+            <img src="img/icon-uxui-designer.svg" alt="UX/UI Designers" />
+            <div>UX/UI Designers</div>
+          </div>
+          <div class="col-md-4 col-sm-12 user">
+            <img src="img/icon-product-designer.svg" alt="Product Designers" />
+            <div>Product Designers</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-5 col-sm-12 col-xs-12 fancy-green rotate-left">or anyone creating<br>
+                &amp; communicating vision<br>
+                for products<br>
+          </div>
+        </div>
+
       </section>
       <!-- end of #meet-uid8 -->
 
       <section id="inspirations">
-
+          <div class="container">
+            <h2>Get drawing inspirations from our blog!</h2>
+            <div class="row">
+              <form class="newsletter">
+                <div class="col-md-4">
+                  <input type="name" placeholder="name" />
+                </div>
+                <div class="col-md-4 col-md-offset-2">
+                  <input type="email" placeholder="email" />
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" value="Send">Send</button>
+                </div>
+              </form>
+            </div>
+            <div class="row">
+            </div>
+          </div>  
       </section>
       <!-- end of #inspirations -->
 
       <section id="video">
-        
+        <div class="container">
+          <h2>Think draw repeat</h2>
+          <img src="img/videoplaceholder.svg" alt="" width="100%" />
+          <div class="row">
+            <div class="col-md-12 download text-center">
+                <a href="#" class="btn" role="button"><span>Download</span></a>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- end of #video -->
 
@@ -69,7 +192,7 @@
 
       </footer>
 
-    </div>
+    
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
