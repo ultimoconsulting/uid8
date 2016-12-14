@@ -11,6 +11,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
+    <script src="js/main.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,27 +22,26 @@
   </head>
   <body>
   <div class="wrapper">
-    
       <header>
         <div class="container">
           <div class="row">
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-2 col-sm-6 col-xs-6">
               <a href="#"><img src="img/logo.svg" alt="UID8" /></a>
             </div>
-            <div class="col-md-2 col-md-offset-8 col-sm-6 download">
+            <div class="col-md-2 col-md-offset-8 col-sm-6 col-xs-6 text-right download">
               <a href="#" class="btn" role="button"><span>Download</span></a>
             </div>
           </div>
           <div class="row">
-              <div class="page-header">
+              <div>
                 <h1>paper so far was designers best <span class="fancy-green">friend</span></h1>
               </div>
           </div>
         </div>
         <div class="container-fluid">  
           <div class="row">
-            <video poster="img/kartki-desktop.png" class="bgvid" autoplay muted>
-              <source src="video/reka.mp4" type="video/mp4">
+            <video id="vid-kartki" poster="img/tlo.png" class="bgvid" autoplay muted>
+              <source src="video/reka_CLIPCHAMP_keep.mp4" type="video/mp4">
             </video>
           </div>
         </div>  
@@ -49,20 +50,20 @@
       <section id="bin">
         <div class="container-fluid">  
           <div class="row">
-            <video poster="img/smietnik.png" class="bgvid" autoplay muted>
-              <source src="video/kosz1.mp4" type="video/mp4">
+            <video id="vid-smietnik" poster="img/smietnik.png" class="bgvid" autoplay muted>
+              <source src="video/kosz1_CLIPCHAMP_keep.mp4" type="video/mp4">
             </video>
           </div>
         </div>  
         <div class="container desc">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-6 col-sm-12 fancy-green rotate-right">sometimes repetitevely until...</div>
+          <div class="row 1stdesc">
+            <div class="col-md-6 col-md-offset-6 col-sm-12 fancy-green rotate-right ">sometimes repetitevely until...</div>
           </div>
-          <div class="row">
-            <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left">YOU Got it right!</div>
+          <div class="row 2nddsec">
+            <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left ">YOU Got it right!</div>
           </div>
-          <div class="row">
-            <div class="col-md-6 col-md-offset-6 hidden-sm hidden-xs fancy-green rotate-right">BUT!</div>
+          <div class="row 3rddsec">
+            <div class="col-md-6 col-md-offset-6 hidden-sm hidden-xs fancy-green rotate-right text-center">BUT!</div>
           </div>
         </div>
       </section>  
@@ -155,7 +156,18 @@
 
       <section id="inspirations">
           <div class="container">
-            <h2>Get drawing inspirations from our blog!</h2>
+            <div class="row">
+              <div class="col-md-5 col-sm-12">
+                <h2>Get drawing inspirations from our blog!</h2>
+              </div>
+              <div class="col-md-2 hidden-sm hidden-xs arrow">
+                <img src="img/arrow-horizontal.svg" alt="" />
+              </div>
+              <div class="col-md-5 col-sm-12 button-draw">
+                <img src="img/btn-draw.svg" alt="Designers draw" />
+              </div>
+            </div>
+                        
             <div class="row">
               <form class="newsletter">
                 <div class="col-md-4">
@@ -189,7 +201,28 @@
       <!-- end of #video -->
 
       <footer>
-
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 text-left">
+              <ul class="footer-list">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 hidden-sm hidden-xs text-center">
+              <span>Made with $$ by your friends from <a href="#">Ultimo</a>.</span>
+            </div>
+            <div class="col-md-4 col-sm-6 text-right">
+              <ul class="footer-list">
+                <li><a href="#"><img src="img/ico-dribble.svg" alt="Dribble"></a></li>
+                <li><a href="#"><img src="img/ico-medium.svg" alt="Medium"></a></li>
+                <li><a href="#"><img src="img/ico-twitter.svg" alt="Twitter"></a></li>
+                <li><a href="#"><img src="img/ico-facebook.svg" alt="Facebook"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </footer>
 
     
@@ -198,5 +231,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(window).resize(function() {
+/*
+           if ($(window).width() >= 480) {
+              $('#vid-kartki')[0].load();
+              $('#vid-kartki')[0].play();
+
+              $('#vid-smietnik')[0].load();
+              $('#vid-smietnik')[0].play();
+            }
+*/
+            var smietnikHeight = $('#vid-smietnik').height();
+            //console.log(smietnikHeight);
+            $('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
+            console.log($('.2nddsec').css("margin-top"));
+       });
+    </script>
   </body>
 </html>
