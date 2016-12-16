@@ -190,13 +190,9 @@ h1 .fancy-green {
 #icons-uid8 .icons p { 
 	margin-top: 1em;
 }
-
+/*
 @keyframes uidanimation {
 	to { top: 200px; }
-}
-
-@keyframes uidanisecond {
-	to { margin-top: -350px; }
 }
 
 @keyframes uidshow {
@@ -204,24 +200,26 @@ h1 .fancy-green {
 }
 
 @keyframes uidhide {
-	to { opacity: 0; height: 0; }
+	to { opacity: 0; display: none; height: 0;}
 }
 
 @keyframes getsmaller {
-	to { height: 10px; }
+	to { transform: scale(0.2); }
 }
 
-@keyframes moveTo {
-	to { margin-top: 100px; }
+@keyframes heightzero {
+	to { height: 0; }
 }
 
-@keyframes setHeight {
-	to { height: 60px; }
+@keyframes moveUp {
+	to { top: 0px; }
 }
-/*
+*/
+
 #icons-uid8 .animation {
 	position: relative;
 	height: 500px;
+	animation: heightzero 5s 0s forwards;
 }
 
 #icons-uid8 .animation #ani-1st, #icons-uid8 .animation #ani-2nd, #icons-uid8 .animation #ani-3rd {
@@ -230,11 +228,12 @@ h1 .fancy-green {
 	margin-right: 0;
 	position: absolute;
 	right: 0; 
-	animation: uidanimation 5s forwards, uidhide 0s 5s forwards;
+	animation: uidanimation 5s forwards, uidhide 0s 4s forwards;
 	
 }
 
-#icons-uid8 .animation #ani-1st img, #icons-uid8 .animation #ani-2nd img, #icons-uid8 .animation #ani-3rd img {
+#icons-uid8 .animation #ani-1st img, #icons-uid8 .animation #ani-2nd img, 
+#icons-uid8 .animation #ani-3rd img, #icons-uid8 .animation #ani-8 img {
 	width: 58%;
 }
 
@@ -251,14 +250,11 @@ h1 .fancy-green {
 }
 
 #icons-uid8 .animation .desc {
+	 
 	animation-name: uidhide;
 	animation-delay: 3s;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
-}
-
-#icons-uid8 .animation {
-	animation: getsmaller 5s 5s forwards;
 }
 
 #icons-uid8 .animation #ani-8 {
@@ -269,22 +265,14 @@ h1 .fancy-green {
 	right: 0; 
 	top: 200px;
 	opacity: 0;
-	animation: uidshow 2s 3s forwards;
-/*	animation-name: uidshow, ;
-	animation-delay: 3s;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-
-	animation: moveTo 2s 5s forwards;
-
+	animation: uidshow 2s 3s forwards, moveUp 1s 2s forwards;
 }
-*/
-/*
+
+
 #icons-uid8 .animation #ani-8 img {
- 	animation: setHeight 5s 5s forwards;
+ 	animation: getsmaller 1s 5s forwards;
 }
 
-*/
 /****** END: #icons-uid8 *****/
 
 
@@ -317,9 +305,19 @@ h1 .fancy-green {
 }
 
 
-#meet-uid8 .gallery-feature.active {
+#meet-uid8 .gallery-feature.active .desc span {
 	color: #67E5C1;
-	
+	border-bottom: 1px #67E5C1 solid;
+	padding-bottom: 2px;
+}
+
+#meet-uid8 .gallery-feature.active .icon path, #meet-uid8 .gallery-feature.active .icon polygon,
+#meet-uid8 .gallery-feature.active .icon polyline {
+	stroke: #67E5C1;
+}
+
+#meet-uid8 #pic-pencil {
+	z-index: 100;
 }
 
 #meet-uid8 .animation img {
@@ -422,6 +420,37 @@ h1 .fancy-green {
 
 /****** END: #inspirations *****/
 
+
+#iPad {
+	max-height: 803px;
+	max-width: 1096px;
+	overflow: hidden;
+	position: relative;
+}
+
+#iPad .cover {
+	position: relative;
+	z-index: 100;
+}
+
+#iPad .screens {
+	position: absolute;
+	top: 9%;
+	left: 11%;
+	width: 78%;
+	height: 80%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+#iPad .screens > div {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	z-index: 1;
+}
 
 /****** START: #video *****/
 
