@@ -83,6 +83,17 @@
             <div class="col-md-3 col-md-offset-3 col-sm-12 desc">And then get another app to build a clickable prototype</div>
             <div class="col-md-5 col-sm-12 icons"><img src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
           </div>
+          <div class="row animation">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 desc">
+              Well these days are gone!
+            </div>
+            <div class="col-md-5 col-sm-12 icons">
+              <div id="ani-1st"><img src="img/icon-draw.svg" alt="" /></div>
+              <div id="ani-2nd"><img src="img/icon-wireframe.svg" alt="" /></div>
+              <div id="ani-3rd"><img src="img/icon-prototype.svg" alt="" /></div>
+              <div id="ani-8"><img src="img/icon-8.svg" alt=""></div>
+            </div>
+          </div>
         </div>
       </section>  
       <!-- end of #uid8-icons -->
@@ -129,28 +140,29 @@
         </div>
 
         <h3>Superhandy for</h3>
-        <div class="row users">
-          <div class="col-md-4 col-sm-12 user">
-            <img src="img/icon-product-manager.svg" alt="Product Manager" />
-            <div>Product Managers</div>
+        <div class="container">
+          <div class="row users">
+            <div class="col-md-4 col-sm-12 user">
+              <img src="img/icon-product-manager.svg" alt="Product Manager" />
+              <div>Product Managers</div>
+            </div>
+            <div class="col-md-4 col-sm-12 user">
+              <img src="img/icon-uxui-designer.svg" alt="UX/UI Designers" />
+              <div>UX/UI Designers</div>
+            </div>
+            <div class="col-md-4 col-sm-12 user">
+              <img src="img/icon-product-designer.svg" alt="Product Designers" />
+              <div>Product Designers</div>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-12 user">
-            <img src="img/icon-uxui-designer.svg" alt="UX/UI Designers" />
-            <div>UX/UI Designers</div>
-          </div>
-          <div class="col-md-4 col-sm-12 user">
-            <img src="img/icon-product-designer.svg" alt="Product Designers" />
-            <div>Product Designers</div>
+
+          <div class="row">
+            <div class="col-md-6 col-md-offset-5 col-sm-12 col-xs-12 fancy-green rotate-left">or anyone creating<br>
+                  &amp; communicating vision<br>
+                  for products<br>
+            </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 col-md-offset-5 col-sm-12 col-xs-12 fancy-green rotate-left">or anyone creating<br>
-                &amp; communicating vision<br>
-                for products<br>
-          </div>
-        </div>
-
       </section>
       <!-- end of #meet-uid8 -->
 
@@ -164,7 +176,7 @@
                 <img src="img/arrow-horizontal.svg" alt="" />
               </div>
               <div class="col-md-5 col-sm-12 button-draw">
-                <img src="img/btn-draw.svg" alt="Designers draw" />
+                <img src="img/btn-designers-draw.png" alt="Designers draw" />
               </div>
             </div>
                         
@@ -232,8 +244,21 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+        $(document).ready({
+            var smietnikHeight = $('#vid-smietnik').height();
+            //console.log(smietnikHeight);
+            $('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
+        });
+
         $(window).resize(function() {
-/*
+
+            var smietnikHeight = $('#vid-smietnik').height();
+            //console.log(smietnikHeight);
+            $('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
+            //console.log($('.2nddsec').css("margin-top"));
+       });
+
+        /*
            if ($(window).width() >= 480) {
               $('#vid-kartki')[0].load();
               $('#vid-kartki')[0].play();
@@ -242,11 +267,6 @@
               $('#vid-smietnik')[0].play();
             }
 */
-            var smietnikHeight = $('#vid-smietnik').height();
-            //console.log(smietnikHeight);
-            $('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
-            console.log($('.2nddsec').css("margin-top"));
-       });
     </script>
   </body>
 </html>
