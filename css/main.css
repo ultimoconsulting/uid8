@@ -32,14 +32,22 @@
 }
 
 body {
-	/*background: #4893FF;*/
+	/*
+	background: #4893FF;
+	background-color: #4688f9;
+	*/
+
 	background: #4c95fb;
+	
 	font-family: 'GalanoGrotesque-Medium'; 
 	color: #fff;
 }
 
 video {
 	width: 100%;
+}
+.extrabottom {
+	margin-bottom: 3em;
 }
 
 .fancy-green {
@@ -60,6 +68,11 @@ video {
     transform: rotate(-7deg);
 }
 
+.wrapper {
+	overflow: hidden;
+	width: 100%;
+}
+
 /****** START: Header *****/
 
 header {
@@ -67,7 +80,8 @@ header {
 	background-size: 1200px;*/
 	font-family: 'GalanoGrotesque-Bold';
 	margin-top: 1em;
-	min-height: 1000px;
+	margin-bottom: -1em;
+	
 }
 
 header video {
@@ -82,8 +96,8 @@ h1 .fancy-green {
 	font-size: 1em;
 }
 
-#bin, #icons-uid8, #meet-uid8 {
-	margin: 5em 0;
+#icons-uid8, #meet-uid8 {
+	margin-top: 2em;
 }
 /****** START: Header *****/
 
@@ -234,7 +248,7 @@ h1 .fancy-green {
 
 #icons-uid8 .animation #ani-1st img, #icons-uid8 .animation #ani-2nd img, 
 #icons-uid8 .animation #ani-3rd img, #icons-uid8 .animation #ani-8 img {
-	width: 58%;
+	
 }
 
 #icons-uid8 .animation #ani-1st {
@@ -250,7 +264,7 @@ h1 .fancy-green {
 }
 
 #icons-uid8 .animation .desc {
-	 
+	height: 1100px;
 	animation-name: uidhide;
 	animation-delay: 3s;
 	animation-duration: 2s;
@@ -261,11 +275,17 @@ h1 .fancy-green {
 	left: 0;
 	margin-left: 0;
 	margin-right: 0;
-	position: absolute;
 	right: 0; 
+
+	margin-top: 23em;
+	position: relative;
+	z-index: 100;
+	/*
+	position: absolute;
 	top: 200px;
 	opacity: 0;
 	animation: uidshow 2s 3s forwards, moveUp 1s 2s forwards;
+	*/
 }
 
 
@@ -295,9 +315,14 @@ h1 .fancy-green {
 	
 }
 
+#meet-uid8 .arrow-back,  #meet-uid8 .arrow-next {
+	display: none;
+}
+
 #meet-uid8 .gallery-feature {
 	width: 14%;
 	float: left;
+	cursor: pointer;
 }
 
 #meet-uid8 .gallery-feature .icon {
@@ -309,6 +334,10 @@ h1 .fancy-green {
 	color: #67E5C1;
 	border-bottom: 1px #67E5C1 solid;
 	padding-bottom: 2px;
+}
+
+#meet-uid8 .gallery-feature .desc p {
+	display: none;
 }
 
 #meet-uid8 .gallery-feature.active .icon path, #meet-uid8 .gallery-feature.active .icon polygon,
@@ -535,6 +564,10 @@ footer  a {
 		text-align: center;
 	}
 
+	#icons-uid8 .animation .desc {
+		height: 100px;
+	}
+
 }
 
 /* Small Devices, Tablets */
@@ -547,7 +580,12 @@ footer  a {
     #meet-uid8 .gallery-feature:nth-of-type(7) {
     	width: 100%;
     }
+
+    #icons-uid8 img {
+    	width: 50%;
+    }
 }
+
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
@@ -555,21 +593,72 @@ footer  a {
     	font-size: 5em;
     }
     #bin .desc .row:nth-of-type(1) {
-    	left: -110%;
+    	left: 0;
+    	top: 5em;
+    }
+
+    #bin {
+    	padding-top: 10em;
     }
 
     #icons-uid8 img {
-    	width: 60%;
+    	width: 50%;
     }
 
     #inspirations h2 {
     	font-size: 3em;
     }
 
+    #meet-uid8 .gallery-container {
+    	overflow: hidden;
+    	height: 180px;
+    	position: relative;
+    }
+
+    #meet-uid8 .arrow-back,  #meet-uid8 .arrow-next {
+		display: block;
+		cursor: pointer;
+	}
+
+	#meet-uid8 .arrow-back {
+		left: 10px;
+		position: absolute;
+		top: 50px;
+	}
+
+	#meet-uid8 .arrow-next {
+		right: 10px;
+		position: absolute;
+		top: 50px;
+	}
+
+    #meet-uid8 .arrow-back img, #meet-uid8 .arrow-next img {
+    	width: 60px;
+    }
+
     #meet-uid8 .gallery-feature {
+    	cursor: auto;
     	width: 100%;
     	margin-bottom: 4em;
+    	position: absolute;
+    	top: 200px;
     }
+
+	#meet-uid8 .gallery-feature.active {
+    	top: 0px;
+    }    
+
+    #meet-uid8 .gallery-feature .desc p {
+		display: block;
+		margin: 0 auto;
+		padding-top: 1em;
+		width: 70%;
+	}
+
+    #meet-uid8 .animation #iPad {
+    	display: none;
+    }
+
 }
 
 /* Custom, iPhone Retina */ 
