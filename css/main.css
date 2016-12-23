@@ -34,11 +34,9 @@
 body {
 	/*
 	background: #4893FF;
-	background-color: #4688f9;
 	*/
-
-	background: #4c95fb;
 	
+	background-color: #4688f9; /* works for everything else */
 	font-family: 'GalanoGrotesque-Medium'; 
 	color: #fff;
 }
@@ -86,6 +84,11 @@ header {
 
 header video {
 	width: 100%;
+	min-height: 500px;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
 
 h1 {
@@ -525,6 +528,14 @@ footer  a {
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
 
+/* video background fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    body
+    {
+        background: #4c95fb;
+    }
+}
+
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
@@ -572,6 +583,10 @@ footer  a {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px) {
+	body {
+		background-color: #4688f9;
+	}
+
     #meet-uid8 .gallery-feature {
     	width: 33%;
     	margin-bottom: 2em;
@@ -665,3 +680,6 @@ footer  a {
 @media only screen and (max-width : 320px) {
     
 }
+
+
+
