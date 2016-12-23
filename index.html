@@ -40,9 +40,14 @@
         </div>
         <div class="container-fluid">  
           <div class="row">
-            <video id="vid-kartki" poster="img/tlo.png" class="bgvid" autoplay muted>
-              <source src="video/reka3.mp4" type="video/mp4">
+          <!--<img src="video/reka.gif" alt="" width="100%" />
+                        <source src="video/reka.webm" type="video/webm">-->
+            <video id="vid-kartki" poster="img/tlo.png" class="bgvid" muted preload="none">
+
+
+              <source src="video/reka_wo.mp4" type="video/mp4">
             </video>
+            
           </div>
         </div>  
       </header>  
@@ -50,8 +55,8 @@
       <section id="bin">
         <div class="container-fluid">  
           <div class="row">
-            <video id="vid-smietnik" poster="img/smietnik.png" class="bgvid" autoplay muted>
-              <source src="video/kosz1_CLIPCHAMP_keep.mp4" type="video/mp4">
+            <video id="vid-smietnik" poster="img/smietnik.png" class="bgvid" muted preload="none">
+              <source src="video/kosz1.mp4" type="video/mp4">
             </video>
           </div>
         </div>  
@@ -447,7 +452,31 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+      function adjustVideo() {
+            var wWidth = $(window).width();
+            if(wWidth > 500) {
+              $('#vid-kartki').attr("autoplay", "autoplay");
+              $('#vid-smietnik').attr("autoplay", "autoplay");
+              $('#vid-kartki').get(0).play();
+              $('#vid-smietnik').get(0).play();
+            } 
+            else {
+              $('#vid-kartki').attr("preload", "none");
+              $('#vid-smietnik').attr("preload", "none");
+              $('#vid-kartki').get(0).load();
+              $('#vid-smietnik').get(0).load();
+
+            }
+           }
+
         $(document).ready(function() {
+
+           
+          
+           
+
+           adjustVideo();
+           
 
           var currentActive; var nextActive; var previousActive;
 
@@ -504,9 +533,14 @@
 
         //reposition text depending on screen width
         $(window).resize(function() {
+            adjustVideo();
+
             var smietnikHeight = $('#vid-smietnik').height();
             $('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
        });
+
+
+
 
     </script>
   </body>
