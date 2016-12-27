@@ -186,6 +186,43 @@ h1 .fancy-green {
 	background: url('../img/iphone.png') no-repeat left center;
 	font-family: 'GalanoGrotesque-Bold';
 	font-size: 2em;
+	position: relative;
+}
+
+#icons-uid8 #aniFirstRow {
+	position: relative;
+	z-index: 10;
+
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+#icons-uid8 #aniFirstRow.in-view {
+	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, 165px, 0px);
+  	-webkit-transform: translate3d(0px, 165px, 0px);
+  	-o-transform: translate(0px, 165px);
+  	-ms-transform: translate(0px, 165px);
+  	transform: translate3d(0px, 165, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
+}
+
+#icons-uid8 #aniSecondRow {
+	position: relative;
+	z-index: 1;
+}
+
+#icons-uid8 #aniThridRow {
+	position: relative;
+	z-index: 10;
 }
 
 #icons-uid8 .desc
@@ -256,14 +293,63 @@ h1 .fancy-green {
 
 #icons-uid8 .animation #ani-1st {
 	top: 0;
+	z-index: 10;
+
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+#icons-uid8 .animation #ani-1st.in-view {
+ 	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, 190px, 0px);
+  	-webkit-transform: translate3d(0px, 190px, 0px);
+  	-o-transform: translate(0px, 190px);
+  	-ms-transform: translate(0px, 190px);
+  	transform: translate3d(0px, 190, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 
 #icons-uid8 .animation #ani-2nd {
-	top: 100px;
+	top: 350px;
+	z-index: 5;
+	
 }
 
+
+
 #icons-uid8 .animation #ani-3rd {
-	top: 200px;	
+	top: 700px;	
+	z-index: 10;
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+#icons-uid8 .animation #ani-3rd.in-view {
+ 	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, -190px, 0px);
+  	-webkit-transform: translate3d(0px, -190px, 0px);
+  	-o-transform: translate(0px, -190px);
+  	-ms-transform: translate(0px, -190px);
+  	transform: translate3d(0px, -190, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 
 #icons-uid8 .animation .desc {
@@ -280,9 +366,11 @@ h1 .fancy-green {
 	margin-right: 0;
 	right: 0; 
 
-	margin-top: 23em;
+	opacity: 0;
+
+	margin-top: 195px;
 	position: relative;
-	z-index: 100;
+	z-index: 10;
 	/*
 	position: absolute;
 	top: 200px;
@@ -294,6 +382,7 @@ h1 .fancy-green {
 
 #icons-uid8 .animation #ani-8 img {
  	animation: getsmaller 1s 5s forwards;
+ 	width: 329px;
 }
 
 /****** END: #icons-uid8 *****/
@@ -598,6 +687,10 @@ footer  a {
 
     #icons-uid8 img {
     	width: 50%;
+    }
+
+    #ani-8 svg {
+    	fill: #4688f9;
     }
 }
 

@@ -76,15 +76,15 @@
 
       <section id="icons-uid8">
         <div class="container">
-          <div class="row">
+          <div class="row" id="aniFirstRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">Drawing UI on paper is just the beginning...</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-draw.svg" alt="" /><p>Paper sketching</p></div>
           </div>
-          <div class="row">
+          <div class="row" id="aniSecondRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">You first have to convert your sketch  to wireframes</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-wireframe.svg" alt="" /><p>Wireframing / HIFI</p></div>
           </div>
-          <div class="row">
+          <div class="row" id="aniThridRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc">And then get another app to build a clickable prototype</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
           </div>
@@ -95,8 +95,23 @@
             <div class="col-md-5 col-sm-12  col-xs-12 icons">
               <div id="ani-1st"><img src="img/icon-draw.svg" alt="" /></div>
               <div id="ani-2nd"><img src="img/icon-wireframe.svg" alt="" /></div>
-              <div id="ani-3rd"><img src="img/icon-prototype.svg" alt="" /></div>
-              <div id="ani-8"><img src="img/icon-8.svg" alt=""></div>
+              <div class="in-view" id="ani-3rd"><img src="img/icon-prototype.svg" alt="" /></div>
+              <div id="ani-8">
+                
+                <svg width="290px" height="564px" viewBox="0 0 290 564" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Icon 8</title>
+                  <desc></desc>
+                  <defs></defs>
+                  <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Desktop-HD-Copy-20" transform="translate(-784.000000, -5334.000000)" stroke-width="14.6999998" fill="#4893FF">
+                          <g id="Group-34" transform="translate(929.000000, 5615.500000) rotate(90.000000) translate(-929.000000, -5615.500000) translate(654.500000, 5478.500000)">
+                              <ellipse id="Oval-37-Copy-7" stroke="#FFFFFF" transform="translate(137.824815, 136.845238) rotate(90.000000) translate(-137.824815, -136.845238) " cx="137.824815" cy="136.845238" rx="136.824815" ry="136.845238"></ellipse>
+                              <path d="M411.824815,273.690476 C487.391074,273.690476 548.64963,212.422776 548.64963,136.845238 C548.64963,61.2677 487.391074,6.82121026e-13 411.824815,6.82121026e-13 C336.258556,6.82121026e-13 275,61.2677 275,136.845238 C275,212.422776 336.258556,273.690476 411.824815,273.690476 Z" id="Oval-37-Copy-9" stroke="#FBFAF8" transform="translate(411.824815, 136.845238) rotate(90.000000) translate(-411.824815, -136.845238) "></path>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +120,7 @@
 
       <section id="meet-uid8">
         <div class="container">
-          <h2>Meet UID8</h2>
+          <h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
           <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
           
           <div class="row gallery-container">
@@ -388,12 +403,15 @@
             </div>
                         
             <div class="row">
-              <form class="newsletter">
+              <form class="newsletter" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
                 <div class="col-md-4">
-                  <input type="text" placeholder="your name" />
+                  <input type="text" required="required" placeholder="your name" />
                 </div>
                 <div class="col-md-4 col-md-offset-2">
-                  <input type="email" placeholder="your email" />
+                  <input type="email" required="required" data-validation="required|email" placeholder="your email" />
+                  <input type="hidden" name="campaign_token" value="n4BFG">
+                  <input type="hidden" name="thankyou_url" value="http://uid8.net/thanks.html">
+                  <input type="hidden" name="forward_data" value="">
                 </div>
                 <div class="col-md-2">
                   <button type="submit" value="Send">Send</button>
@@ -452,6 +470,68 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+      
+
+      function check_if_in_view() {
+        var $window = $(window);
+
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        $animation_elements = $("#ani-1st");
+        $animation_elements.push($("#ani-3rd"));
+        //$animation_elements.push($("#aniFirstRow"));
+
+        $.each($animation_elements, function() {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = (element_top_position + element_height);
+
+          var show8 = false;
+          //check to see if this current container is within viewport
+          if ((element_bottom_position >= window_top_position) &&
+              (element_top_position <= window_bottom_position)) {
+                $element.addClass('in-view');
+                if (($element.selector == '#ani-3rd') && (show8 == false)) {
+
+                  setTimeout(function () {
+                   
+                    $("#ani-8").animate({
+                      opacity: 1
+                      }, {
+                        duration: 500
+                      });//css({'opacity':1}, 2000);  
+                    show8 = true;
+
+                    $("#ani-1st").fadeTo().hide();
+                    $("#ani-2nd").fadeTo().hide();
+                    $("#ani-3rd").fadeTo().hide();
+                  }, 1000);
+                  
+                }
+
+              } 
+              else {
+                console.log("d");
+                $("#ani-1st").fadeIn().show();
+                $("#ani-2nd").fadeIn().show();
+                $("#ani-3rd").fadeIn().show();
+                 $("#ani-8").animate({
+                      opacity: 0
+                      }, {
+                        duration: 100
+                      });
+                $element.removeClass('in-view');
+              }
+        });
+
+      }
+
+      $(window).on('scroll resize', check_if_in_view);
+      $(window).trigger('scroll');
+
       function adjustVideo() {
             var wWidth = $(window).width();
             if(wWidth > 500) {
@@ -471,12 +551,7 @@
 
         $(document).ready(function() {
 
-           
-          
-           
-
-           adjustVideo();
-           
+          adjustVideo();
 
           var currentActive; var nextActive; var previousActive;
 
