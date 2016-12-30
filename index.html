@@ -10,9 +10,9 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-
+    <link href="css/animate.css" rel="stylesheet">
     <script src="js/main.js"></script>
-
+    <script src="js/wow.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,6 +21,9 @@
     <![endif]-->
   </head>
   <body>
+  <script>
+    new WOW().init();
+  </script>
   <div class="wrapper">
       <header>
         <div class="container">
@@ -43,16 +46,14 @@
           <!--<img src="video/reka.gif" alt="" width="100%" />
                         <source src="video/reka.webm" type="video/webm">-->
             <video id="vid-kartki" poster="img/tlo.png" class="bgvid" muted preload="none">
-
-
-              <source src="video/reka_wo.mp4" type="video/mp4">
+              <source src="video/reka4.mp4" type="video/mp4">
             </video>
             
           </div>
         </div>  
       </header>  
         
-      <section id="bin">
+      <section id="bin" class="wow">
         <div class="container-fluid">  
           <div class="row">
             <video id="vid-smietnik" poster="img/smietnik.png" class="bgvid" muted preload="none">
@@ -65,7 +66,7 @@
             <div class="col-md-6 col-md-offset-6 col-sm-12  col-xs-12 fancy-green rotate-right ">sometimes repetitevely until...</div>
           </div>
           <div class="row 2nddsec">
-            <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left ">YOU Got it right!</div>
+            <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left text-right">YOU Got it right!</div>
           </div>
           <div class="row 3rddsec">
             <div class="col-md-6 col-md-offset-6 hidden-sm hidden-xs fancy-green rotate-right text-center">BUT!</div>
@@ -76,15 +77,15 @@
 
       <section id="icons-uid8">
         <div class="container">
-          <div class="row" id="aniFirstRow">
+          <div class="row wow fadeIn" id="aniFirstRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">Drawing UI on paper is just the beginning...</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-draw.svg" alt="" /><p>Paper sketching</p></div>
           </div>
-          <div class="row" id="aniSecondRow">
+          <div class="row wow fadeIn" id="aniSecondRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">You first have to convert your sketch  to wireframes</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-wireframe.svg" alt="" /><p>Wireframing / HIFI</p></div>
           </div>
-          <div class="row" id="aniThridRow">
+          <div class="row wow fadeIn" id="aniThridRow">
             <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc">And then get another app to build a clickable prototype</div>
             <div class="col-md-5 col-sm-12  col-xs-12 icons"><img src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
           </div>
@@ -120,7 +121,7 @@
 
       <section id="meet-uid8">
         <div class="container">
-          <h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
+          <h2>Meet <span>UID8</span><!--<img src="img/logo-uid8-bg.svg" alt="UID8" />--></h2>
           <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
           
           <div class="row gallery-container">
@@ -514,7 +515,7 @@
 
               } 
               else {
-                console.log("d");
+              
                 $("#ani-1st").fadeIn().show();
                 $("#ani-2nd").fadeIn().show();
                 $("#ani-3rd").fadeIn().show();
@@ -528,6 +529,7 @@
         });
 
       }
+      /*** end check_if_in_view() ***/
 
       $(window).on('scroll resize', check_if_in_view);
       $(window).trigger('scroll');
@@ -536,9 +538,9 @@
             var wWidth = $(window).width();
             if(wWidth > 500) {
               $('#vid-kartki').attr("autoplay", "autoplay");
-              $('#vid-smietnik').attr("autoplay", "autoplay");
+              //$('#vid-smietnik').attr("autoplay", "autoplay");
               $('#vid-kartki').get(0).play();
-              $('#vid-smietnik').get(0).play();
+              //$('#vid-smietnik').get(0).play();
             } 
             else {
               $('#vid-kartki').attr("preload", "none");
@@ -548,10 +550,40 @@
 
             }
            }
+      /*** end adjustVideo() ***/
+
+      var media = $('video').not("[autoplay='autoplay']");
+
+            var tolerancePixel = 40;
+
+            function checkMedia(){
+                // Get current browser top and bottom
+                var scrollTop = $(window).scrollTop() + tolerancePixel;
+                var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
+
+                media.each(function(index, el) {
+                  
+                    var yTopMedia = $(this).offset().top;
+                    var yBottomMedia = $(this).height() + yTopMedia;
+
+                    if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+                        $(this).get(0).play();
+                    } else {
+                        $(this).get(0).pause();
+                    }
+                });
+
+                //}
+            }
+            
+            $(document).on('scroll', checkMedia);
 
         $(document).ready(function() {
 
           adjustVideo();
+
+
+
 
           var currentActive; var nextActive; var previousActive;
 

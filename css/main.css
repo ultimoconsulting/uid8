@@ -77,14 +77,16 @@ header {
 	/*background: url('../img/kartki_desktop.png') no-repeat center bottom;
 	background-size: 1200px;*/
 	font-family: 'GalanoGrotesque-Bold';
-	margin-top: 1em;
+	margin-top: 3em;
 	margin-bottom: -1em;
 	
 }
 
 header video {
 	width: 100%;
+	margin-top: -12em;
 	min-height: 500px;
+	z-index: 1;
 }
 
 video::-webkit-media-controls-start-playback-button {
@@ -92,14 +94,17 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 h1 {
-	font-size: 7em;
+	font-size: 8em;
+	max-width: 800px;
+	position: relative;
+	z-index: 10;
 }
 
 h1 .fancy-green {
 	font-size: 1em;
 }
 
-#icons-uid8, #meet-uid8 {
+#meet-uid8 {
 	margin-top: 2em;
 }
 /****** START: Header *****/
@@ -140,7 +145,7 @@ h1 .fancy-green {
 /****** START: #Bin *****/
 
 #bin {
-
+	margin-top: 5em;
 	position: relative;
 }
 
@@ -162,15 +167,21 @@ h1 .fancy-green {
 
 #bin .desc .row {
 	position: relative;
+	margin-top: 5em;
 	/*left: -50%;*/
 }
 
 #bin .desc .row:nth-of-type(2) {
-	margin-top: 30em;
+	margin-top: 25em;
+
+}
+
+#bin .desc .row:nth-of-type(2) div {
+	max-width: 390px;
 }
 
 #bin .desc .row:nth-of-type(3) {
-	/*margin-top: 2em;*/
+	
 }
 
 #bin .desc .fancy-box:nth-of-type(1) {
@@ -186,6 +197,7 @@ h1 .fancy-green {
 	background: url('../img/iphone.png') no-repeat left center;
 	font-family: 'GalanoGrotesque-Bold';
 	font-size: 2em;
+	margin-top: 5em;
 	position: relative;
 }
 
@@ -229,6 +241,7 @@ h1 .fancy-green {
 {
 	align-items: center;
     display: flex;
+    font-size: 1.1em;
     height: 320px;
     justify-content: center;
 }
@@ -396,6 +409,11 @@ h1 .fancy-green {
 
 #meet-uid8 h2 {
 	font-size: 5em;
+}
+
+#meet-uid8 h2 span {
+	background: url('../img/logo-uid8-bg.svg') no-repeat;
+	text-indent: -9999em;
 }
 
 #meet-uid8 h3 {
