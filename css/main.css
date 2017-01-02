@@ -77,14 +77,20 @@ header {
 	/*background: url('../img/kartki_desktop.png') no-repeat center bottom;
 	background-size: 1200px;*/
 	font-family: 'GalanoGrotesque-Bold';
-	margin-top: 1em;
+	margin-top: 3em;
 	margin-bottom: -1em;
 	
 }
 
 header video {
 	width: 100%;
+	margin-top: -12em;
 	min-height: 500px;
+	z-index: 1;
+}
+
+header .container .row {
+	padding: 0 5em;
 }
 
 video::-webkit-media-controls-start-playback-button {
@@ -92,14 +98,17 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 h1 {
-	font-size: 7em;
+	font-size: 8em;
+	max-width: 800px;
+	position: relative;
+	z-index: 10;
 }
 
 h1 .fancy-green {
 	font-size: 1em;
 }
 
-#icons-uid8, #meet-uid8 {
+#meet-uid8 {
 	margin-top: 2em;
 }
 /****** START: Header *****/
@@ -140,7 +149,7 @@ h1 .fancy-green {
 /****** START: #Bin *****/
 
 #bin {
-
+	margin-top: 5em;
 	position: relative;
 }
 
@@ -162,15 +171,21 @@ h1 .fancy-green {
 
 #bin .desc .row {
 	position: relative;
+	margin-top: 5em;
 	/*left: -50%;*/
 }
 
 #bin .desc .row:nth-of-type(2) {
-	margin-top: 30em;
+	margin-top: 25em;
+
+}
+
+#bin .desc .row:nth-of-type(2) div {
+	max-width: 390px;
 }
 
 #bin .desc .row:nth-of-type(3) {
-	/*margin-top: 2em;*/
+	
 }
 
 #bin .desc .fancy-box:nth-of-type(1) {
@@ -186,12 +201,51 @@ h1 .fancy-green {
 	background: url('../img/iphone.png') no-repeat left center;
 	font-family: 'GalanoGrotesque-Bold';
 	font-size: 2em;
+	margin-top: 5em;
+	position: relative;
+}
+
+#icons-uid8 #aniFirstRow {
+	position: relative;
+	z-index: 10;
+
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+#icons-uid8 #aniFirstRow.in-view {
+	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, 165px, 0px);
+  	-webkit-transform: translate3d(0px, 165px, 0px);
+  	-o-transform: translate(0px, 165px);
+  	-ms-transform: translate(0px, 165px);
+  	transform: translate3d(0px, 165, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
+}
+
+#icons-uid8 #aniSecondRow {
+	position: relative;
+	z-index: 1;
+}
+
+#icons-uid8 #aniThridRow {
+	position: relative;
+	z-index: 10;
 }
 
 #icons-uid8 .desc
 {
 	align-items: center;
     display: flex;
+    font-size: 1.1em;
     height: 320px;
     justify-content: center;
 }
@@ -207,6 +261,13 @@ h1 .fancy-green {
 #icons-uid8 .icons p { 
 	margin-top: 1em;
 }
+
+#icons-uid8 .arrow {
+	margin-left: -3em;
+	position: relative;
+	top: 10em;
+}
+
 /*
 @keyframes uidanimation {
 	to { top: 200px; }
@@ -256,14 +317,63 @@ h1 .fancy-green {
 
 #icons-uid8 .animation #ani-1st {
 	top: 0;
+	z-index: 10;
+
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+#icons-uid8 .animation #ani-1st.in-view {
+ 	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, 190px, 0px);
+  	-webkit-transform: translate3d(0px, 190px, 0px);
+  	-o-transform: translate(0px, 190px);
+  	-ms-transform: translate(0px, 190px);
+  	transform: translate3d(0px, 190, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 
 #icons-uid8 .animation #ani-2nd {
-	top: 100px;
+	top: 350px;
+	z-index: 5;
+	
 }
 
+
+
 #icons-uid8 .animation #ani-3rd {
-	top: 200px;	
+	top: 700px;	
+	z-index: 10;
+	-moz-transform: translate3d(0px, 0px, 0px);
+  	-webkit-transform: translate3d(0px, 0px, 0px);
+  	-o-transform: translate(0px, 0px);
+  	-ms-transform: translate(0px, 0px);
+  	transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+#icons-uid8 .animation #ani-3rd.in-view {
+ 	-moz-transition: all 700ms ease-out;
+	-webkit-transition: all 700ms ease-out;
+	-o-transition: all 700ms ease-out;
+  	transition: all 700ms ease-out;
+  	-moz-transform: translate3d(0px, -190px, 0px);
+  	-webkit-transform: translate3d(0px, -190px, 0px);
+  	-o-transform: translate(0px, -190px);
+  	-ms-transform: translate(0px, -190px);
+  	transform: translate3d(0px, -190, 0px);
+  	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 
 #icons-uid8 .animation .desc {
@@ -280,9 +390,11 @@ h1 .fancy-green {
 	margin-right: 0;
 	right: 0; 
 
-	margin-top: 23em;
+	opacity: 0;
+
+	margin-top: 195px;
 	position: relative;
-	z-index: 100;
+	z-index: 10;
 	/*
 	position: absolute;
 	top: 200px;
@@ -294,6 +406,7 @@ h1 .fancy-green {
 
 #icons-uid8 .animation #ani-8 img {
  	animation: getsmaller 1s 5s forwards;
+ 	width: 329px;
 }
 
 /****** END: #icons-uid8 *****/
@@ -307,6 +420,15 @@ h1 .fancy-green {
 
 #meet-uid8 h2 {
 	font-size: 5em;
+}
+
+#meet-uid8 h2 span {
+	background: url('../img/logo-uid8-bg.svg') no-repeat;
+	text-indent: -9999em;
+}
+
+#meet-uid8 h2 img {
+	margin-top: 0.6em;
 }
 
 #meet-uid8 h3 {
@@ -583,9 +705,25 @@ footer  a {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px) {
+	/*
 	body {
 		background-color: #4688f9;
 	}
+*/	
+
+	header .container .row {
+		padding: 0 2em;
+	}
+
+	h1 {
+    	font-size: 5em;
+    }
+
+     #bin .desc .row:nth-of-type(1) {
+    	left: 0;
+    	top: -5em;
+    }
+
 
     #meet-uid8 .gallery-feature {
     	width: 33%;
@@ -596,27 +734,34 @@ footer  a {
     	width: 100%;
     }
 
-    #icons-uid8 img {
+    #icons-uid8 img.icon, #icons-uid8 svg {
     	width: 50%;
+    }
+
+    #ani-8 svg {
+    	fill: #4688f9;
     }
 }
 
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-    h1 {
-    	font-size: 5em;
+    
+	h1 {
+    	font-size: 4.5em;
     }
+
+
     #bin .desc .row:nth-of-type(1) {
     	left: 0;
-    	top: 5em;
+    	top: -5em;
     }
 
     #bin {
     	padding-top: 10em;
     }
 
-    #icons-uid8 img {
+    #icons-uid8 img, #icons-uid8 svg {
     	width: 50%;
     }
 
@@ -648,7 +793,7 @@ footer  a {
 	}
 
     #meet-uid8 .arrow-back img, #meet-uid8 .arrow-next img {
-    	width: 60px;
+    	width: 50px;
     }
 
     #meet-uid8 .gallery-feature {
@@ -679,7 +824,5 @@ footer  a {
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
+
 }
-
-
-
