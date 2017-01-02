@@ -205,6 +205,7 @@ h1 .fancy-green {
 	position: relative;
 }
 
+
 #icons-uid8 #aniFirstRow {
 	position: relative;
 	z-index: 10;
@@ -765,9 +766,19 @@ footer  a {
     	width: 50%;
     }
 
+    #icons-uid8 .icon {
+	margin: 1em 0;
+	}
+
+	#icons-uid8 p {
+		padding-bottom: 2em;
+	}
+    
     #inspirations h2 {
     	font-size: 3em;
     }
+
+
 
     #meet-uid8 .gallery-container {
     	overflow: hidden;
