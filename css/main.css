@@ -71,6 +71,8 @@ video {
 	width: 100%;
 }
 
+
+
 /****** START: Header *****/
 
 header {
@@ -93,9 +95,7 @@ header .container .row {
 	padding: 0 5em;
 }
 
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-}
+
 
 h1 {
 	font-size: 8em;
@@ -114,36 +114,95 @@ h1 .fancy-green {
 /****** START: Header *****/
 
 
-
-
 /****** START: Download Button *****/
 
 .download .btn {
-	background: url('../img/logo-apple.svg') no-repeat 80% 30%;
+
 	border: 1px solid #fff;
 	border-radius: 2em;
 	color: #fff;
 	font-family: 'GalanoGrotesque-Medium';
-	padding-left: 2em;
-	padding-right: 4em;
 }
 
-.download .btn span {
+.download {
+	font-size: 1em;
+	display: table;
 }
 
-.download .btn .logo-apple {
-	background: url(../img/logo-apple.svg) no-repeat center center;
-	border-left: 1px solid #fff;
-	display: block;
-	float: right;
-	height: 21px;
-	width: 18px;
+.download .btn {
+	border-radius: 4em;
+	padding-bottom: 0;
+	padding-right: 3em;
+	padding-top: 0;
+}
+
+.download .desc {
+	border-right: 1px solid #fff;
+	display: table-cell;
+	font-size: 2.4em;
+	line-height: 2em;
+	padding: 0 1em;
+	padding-top: 2px;
+}
+
+.download .logo {
+	 display: table-cell;
+	 margin-top: -1px;
+	 padding-left: 1.5em;
+	 vertical-align: middle;
 }
 
 /****** END: Download Button *****/
 
 
+/****** START: #faq *****/
+#faq {
+	 
+	margin-bottom: 5em;
+}
 
+#faq .row {
+	margin: 3em auto 5em auto;
+}
+
+#faq .single-question:nth-of-type(odd) {
+	background: url('../img/bg-sketch.png') left center no-repeat;
+}
+
+#faq .single-question:nth-of-type(even) {
+	background: url('../img/bg-sketch-2.png') right center no-repeat;
+}
+
+.answer {
+	/*
+	display: none;
+	max-width: 850px;
+	*/
+	font-size: 1.75em;
+	padding: 0 2em;
+	
+}
+
+.question {
+	color: #67E5C1;
+	cursor: pointer;
+	font-family: 'GalanoGrotesque-Bold';
+    font-size: 3em;
+	/* 
+	padding: 0 2em;
+	*/
+}
+
+/****** END: #faq *****/
+
+
+header .download .btn {
+	font-size: 7px;
+}
+
+header .download .logo img {
+	width: 17px;
+}
 
 
 /****** START: #Bin *****/
@@ -607,21 +666,30 @@ h1 .fancy-green {
 	z-index: 1;
 }
 
-/****** START: #video *****/
+/****** START: #thinkdraw *****/
 
-#video h2 {
+#thinkdraw h2 {
 	color: #3E64CF;
 	font-family: 'KGLifeisMessy';
-	font-size: 4em;
+	font-size: 3em;
 	margin-top: 2em;
 	text-align: center;
 }
 
-#video .download {
+#thinkdraw .download {
 	font-size: 2em;
+	margin: 3em auto;
 }
 
-/****** END: #video *****/
+#thinkdraw .download .desc {
+	font-size: 2.2em;
+}
+
+#thinkdraw .download .logo img {
+	margin-top: -2px;
+}
+
+/****** END: #thinkdraw *****/
 
 
 /****** START: footer *****/
@@ -669,6 +737,9 @@ footer  a {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+	#faq .single-question {
+		background: none!important;
+	}
 
     #icons-uid8 {
     	text-align: center;
@@ -747,7 +818,10 @@ footer  a {
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-    
+    header .container .row:nth-of-type(1) {
+    	padding-right: 0;
+    }
+
 	h1 {
     	font-size: 4.5em;
     }
@@ -830,10 +904,17 @@ footer  a {
     	display: none;
     }
 
+    #thinkdraw .download .desc {
+    	font-size: 1.8em;
+    }
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
 
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
