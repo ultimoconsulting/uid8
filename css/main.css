@@ -266,6 +266,13 @@ header .download .logo img {
 	margin-bottom: -470px;
 }
 
+#icons-uid8.animation-end .container {
+	position: absolute;
+	bottom: -200px;
+	left: 50%;
+	margin-left: -475px;
+}
+
 
 #icons-uid8 #aniFirstRow {
 	position: relative;

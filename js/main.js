@@ -3,7 +3,8 @@ $(function () {
 		elementHelper,
 		START_STATUS = 'start',
 		END_STATUS = 'end',
-		IN_PROGRESS_STATUS = 'in progress';
+		IN_PROGRESS_STATUS = 'in progress',
+		ANIMATION_END_CLASS = 'animation-end';
 
 	function AnimationCollection(list) {
 		this.initialize(list);
@@ -83,6 +84,13 @@ $(function () {
 		},
 		setFrame: function (value) {
 			this.$element.css(this.what, this.decorator.replace(/\{x\}/g, value));
+			if (this.what === 'opacity') {
+				if (value === 0) {
+					this.$element.css('visibility', 'hidden');
+				} else {
+					this.$element.css('visibility', '');
+				}
+			}
 		}
 	};
 
@@ -130,12 +138,14 @@ $(function () {
 			return this.$container.css('position') === 'fixed';
 		},
 		fixContainer: function () {
-			var $container = this.$container,
+			var $wrapper = this.$wrapper,
+				$container = this.$container,
 				offset;
 			if (this.isAnimationActive()) {
 				return;
 			}
 			this.unfixContainer();
+			$wrapper.removeClass(ANIMATION_END_CLASS);
 			this.setAnimationFrame(0);
 
 			offset = elementHelper.getElementOffset($container);
@@ -149,22 +159,14 @@ $(function () {
 		unfixContainer: function (atBottom) {
 			var $container = this.$container,
 				$wrapper = this.$wrapper;
+			$container.css({
+				position: '',
+				top: '',
+				left: '',
+				bottom: ''
+			});
 			if (atBottom) {
-				var wRect = $wrapper[0].getBoundingClientRect(),
-					cRect = $container[0].getBoundingClientRect();
-				$container.css({
-					position: 'absolute',
-					top: '',
-					left: cRect.left - wRect.left + 'px',
-					bottom: wRect.bottom - cRect.bottom + 'px'
-				});
-			} else {
-				$container.css({
-					position: '',
-					top: '',
-					left: '',
-					bottom: ''
-				});
+				$wrapper.addClass(ANIMATION_END_CLASS);
 			}
 		},
 		setAnimationFrame: function (percent) {
@@ -197,6 +199,9 @@ $(function () {
 			var animation = this;
 			$window.on({
 				'scroll.scrollAnimation': function () {
+					animation.refresh();
+				},
+				'resize..scrollAnimation': function () {
 					animation.refresh();
 				}
 			})
@@ -254,112 +259,113 @@ $(function () {
 	});
 });
 
-
-function adjustVideo() {
-	var wWidth = $(window).width();
-	//standard tablet
-	if(wWidth > 768) {
-		$('#vid-kartki').attr("autoplay", "autoplay");
-		//$('#vid-smietnik').attr("autoplay", "autoplay");
-		$('#vid-kartki').get(0).play();
-		//$('#vid-smietnik').get(0).play();
-	}
-	else {
-		$('#vid-kartki').attr("preload", "none");
-		$('#vid-smietnik').attr("preload", "none");
-		$('#vid-kartki').get(0).load();
-		$('#vid-smietnik').get(0).load();
-	}
-}
-/*** end adjustVideo() ***/
-
-
-var videoStarted = false;
-var tolerancePixel = 40;
-
-function checkMedia(){
-	//get current browser top and bottom
-	var scrollTop = $(window).scrollTop() + tolerancePixel;
-	var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
-	var wWidth = $(window).width();
-	var media = $("#vid-smietnik");
-
-	media.each(function(index, el) {
-		var yTopMedia = $(this).offset().top;
-		var yBottomMedia = $(this).height() + yTopMedia;
-
-		if(scrollTop < yBottomMedia && scrollBottom > yTopMedia && videoStarted == false && wWidth > 768){
-			//view explaination in `In brief` section above
-			$(this).get(0).play();
-			videoStarted = true;
+(function () {
+	/*** end adjustVideo() ***/
+	function adjustVideo() {
+		var wWidth = $(window).width();
+		//standard tablet
+		if(wWidth > 768) {
+			$('#vid-kartki').attr("autoplay", "autoplay");
+			//$('#vid-smietnik').attr("autoplay", "autoplay");
+			$('#vid-kartki').get(0).play();
+			//$('#vid-smietnik').get(0).play();
 		}
 		else {
-			// $(this).get(0).pause();
-		}
-	});
-}
-/*** end checkMedia() ***/
-
-//document scroll
-$(window).trigger('scroll');
-$(document).on('scroll', checkMedia);
-
-//reposition text depending on screen width
-$(window).resize(function() {
-	adjustVideo();
-	var smietnikHeight = $('#vid-smietnik').height();
-	$('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
-});
-
-
-/*** start $(document).ready() ***/
-$(document).ready(function() {
-	adjustVideo();
-	var currentActive; var nextActive; var previousActive;
-
-	//currect active feature in meet uid8
-	function detectCurrentFreature() {
-		currentActive = $(".gallery-container").children(".active");
-		nextActive = currentActive.next();
-		previousActive = currentActive.prev();
-
-		//doesn't have a previous gallery-feature sibling
-		if (previousActive.length == 0) {
-			previousActive = $(".gallery-feature").last();
-		}
-		//doesn't have a next gallery-feature sibling
-		if (nextActive.attr("class") == "arrow-back") {
-			nextActive = $(".gallery-feature").first();
+			$('#vid-kartki').attr("preload", "none");
+			$('#vid-smietnik').attr("preload", "none");
+			$('#vid-kartki').get(0).load();
+			$('#vid-smietnik').get(0).load();
 		}
 	}
-	/*** end detectCurrentFreature() ***/
 
-	$('.arrow-back').click(function(){
-		detectCurrentFreature();
-		currentActive.removeClass("active");
-		previousActive.addClass("active");
+
+	var videoStarted = false;
+	var tolerancePixel = 40;
+
+	function checkMedia(){
+		//get current browser top and bottom
+		var scrollTop = $(window).scrollTop() + tolerancePixel;
+		var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
+		var wWidth = $(window).width();
+		var media = $("#vid-smietnik");
+
+		media.each(function(index, el) {
+			var yTopMedia = $(this).offset().top;
+			var yBottomMedia = $(this).height() + yTopMedia;
+
+			if(scrollTop < yBottomMedia && scrollBottom > yTopMedia && videoStarted == false && wWidth > 768){
+				//view explaination in `In brief` section above
+				$(this).get(0).play();
+				videoStarted = true;
+			}
+			else {
+				// $(this).get(0).pause();
+			}
+		});
+	}
+	/*** end checkMedia() ***/
+
+//document scroll
+	$(window).trigger('scroll');
+	$(document).on('scroll', checkMedia);
+
+//reposition text depending on screen width
+	$(window).resize(function() {
+		adjustVideo();
+		var smietnikHeight = $('#vid-smietnik').height();
+		$('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
 	});
 
-	$('.arrow-next').click(function(){
-		detectCurrentFreature();
-		currentActive.removeClass("active");
-		nextActive.addClass("active");
-	});
 
-	//carousel for features
-	$('.gallery-feature').click(function(){
-		var id = $(this).attr("id").substr(4);
-		var prevActive = $(".gallery-container").children(".active").attr("id").substr(4);
+	/*** start $(document).ready() ***/
+	$(document).ready(function() {
+		adjustVideo();
+		var currentActive; var nextActive; var previousActive;
 
-		if(id != prevActive) {
-			$("#pic-"+id).css("z-index", "50");
-			$("#pic-"+prevActive).fadeTo(1000, 0.1, function(){
-				$(".screens > div").not("#pic-"+id).css("z-index", "1");
-				$("#pic-"+id).css("z-index", "100");
-				$("#pic-"+prevActive).fadeTo(0, 1);
-			});
-			$(".gallery-feature").removeClass("active");
-			$(this).addClass("active");
+		//currect active feature in meet uid8
+		function detectCurrentFreature() {
+			currentActive = $(".gallery-container").children(".active");
+			nextActive = currentActive.next();
+			previousActive = currentActive.prev();
+
+			//doesn't have a previous gallery-feature sibling
+			if (previousActive.length == 0) {
+				previousActive = $(".gallery-feature").last();
+			}
+			//doesn't have a next gallery-feature sibling
+			if (nextActive.attr("class") == "arrow-back") {
+				nextActive = $(".gallery-feature").first();
+			}
 		}
+		/*** end detectCurrentFreature() ***/
+
+		$('.arrow-back').click(function(){
+			detectCurrentFreature();
+			currentActive.removeClass("active");
+			previousActive.addClass("active");
+		});
+
+		$('.arrow-next').click(function(){
+			detectCurrentFreature();
+			currentActive.removeClass("active");
+			nextActive.addClass("active");
+		});
+
+		//carousel for features
+		$('.gallery-feature').click(function(){
+			var id = $(this).attr("id").substr(4);
+			var prevActive = $(".gallery-container").children(".active").attr("id").substr(4);
+
+			if(id != prevActive) {
+				$("#pic-"+id).css("z-index", "50");
+				$("#pic-"+prevActive).fadeTo(1000, 0.1, function(){
+					$(".screens > div").not("#pic-"+id).css("z-index", "1");
+					$("#pic-"+id).css("z-index", "100");
+					$("#pic-"+prevActive).fadeTo(0, 1);
+				});
+				$(".gallery-feature").removeClass("active");
+				$(this).addClass("active");
+			}
+		});
 	});
-});
+}());
