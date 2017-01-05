@@ -203,6 +203,8 @@ h1 .fancy-green {
 	font-size: 2em;
 	margin-top: 5em;
 	position: relative;
+	height: 4000px;
+	margin-bottom: -470px;
 }
 
 
@@ -413,7 +415,28 @@ h1 .fancy-green {
 /****** END: #icons-uid8 *****/
 
 
-/****** START: #meet-uid8 *****/
+/****** START: # *****/
+.animation-logo {
+	text-align: center;
+}
+
+.animation-logo h2 {
+	font-size: 5em;
+}
+
+.animation-logo h2 span {
+	background: url('../img/logo-uid8-bg.svg') no-repeat;
+	text-indent: -9999em;
+}
+
+.animation-logo h2 img {
+	margin-top: 0.6em;
+}
+
+.animation-logo h3 {
+	font-size: 2.3em;
+	margin-bottom: 3em;
+}
 
 #meet-uid8 {
 	text-align: center;
