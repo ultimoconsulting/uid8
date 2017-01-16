@@ -266,11 +266,20 @@ header .download .logo img {
 	margin-bottom: -470px;
 }
 
+#icons-uid8-mobile {
+	display: none;
+	background: url('../img/iphone.png') no-repeat left center;
+	font-family: 'GalanoGrotesque-Bold';
+	font-size: 2em;
+	margin-top: 5em;
+	position: relative;
+}
+
 #icons-uid8.animation-end .container {
 	position: absolute;
-	bottom: -200px;
+	bottom: -244px;
 	left: 50%;
-	margin-left: -475px;
+	margin-left: -585px;
 }
 
 
@@ -336,32 +345,6 @@ header .download .logo img {
 	position: relative;
 	top: 10em;
 }
-
-/*
-@keyframes uidanimation {
-	to { top: 200px; }
-}
-
-@keyframes uidshow {
-	to { opacity: 1; }
-}
-
-@keyframes uidhide {
-	to { opacity: 0; display: none; height: 0;}
-}
-
-@keyframes getsmaller {
-	to { transform: scale(0.2); }
-}
-
-@keyframes heightzero {
-	to { height: 0; }
-}
-
-@keyframes moveUp {
-	to { top: 0px; }
-}
-*/
 
 #icons-uid8 .animation {
 	position: relative;
@@ -506,6 +489,8 @@ header .download .logo img {
 
 #meet-uid8 {
 	text-align: center;
+	position: relative;
+	z-index: 10;
 }
 
 #meet-uid8 h2 {
@@ -582,6 +567,15 @@ header .download .logo img {
 
 #meet-uid8 .fancy-green {
 	/*margin-bottom: 2em;*/
+}
+
+#meet-uid8-mobile {
+	display: none;
+}
+
+#meet-uid8-mobile h2 {
+	    letter-spacing: 12px;
+    text-transform: uppercase;
 }
 
 /****** START: #inspirations *****/
@@ -773,6 +767,12 @@ footer  a {
 
     #icons-uid8 {
     	text-align: center;
+    	display: none;
+    }
+
+    #icons-uid8-mobile {
+    	text-align: center;
+    	display: block;
     }
 
     #icons-uid8 .desc {
@@ -802,7 +802,12 @@ footer  a {
 	#icons-uid8 .animation .desc {
 		height: 100px;
 	}
-
+	#meet-uid8 {
+		top: 0;
+	}
+	#meet-uid8-mobile {
+		display: block;
+	}
 }
 
 /* Small Devices, Tablets */
@@ -943,6 +948,10 @@ footer  a {
 @media only screen and (max-width : 320px) {
     
 
+}
+
+.WindowsChrome {
+	background-color: #4688fa;
 }
 
 video::-webkit-media-controls-start-playback-button {

@@ -88,7 +88,7 @@
                         <div class="col-md-5 col-sm-12  col-xs-12 icons">
                             <img class="icon" src="img/icon-draw.svg" alt="" data-scroll-animation="25 30"/>
                             <div data-scroll-animation="25 30 opacity 0 1|30 60 border-width 5 50 {x}px" style="border: 5px solid white; border-radius: 50%; width: 330px; height: 330px; position: absolute; top: 0px; left: 78px; opacity: 0;"></div>
-                            <div class="animation-logo" data-scroll-animation="60 75 opacity 0 1" style="opacity: 1; position: absolute;transform: scale(5.48);width: 950px;top: 395px;right: 759px;">
+                            <div class="animation-logo" data-scroll-animation="60 75 opacity 0 1" style="opacity: 0; position: absolute;transform: scale(5.48);width: 950px;top: 395px;right: 838px;">
                                 <h2><p data-scroll-animation="75 100 opacity 0 1" style="opacity: 0; display: inline">Meet </p><img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
                                 <h3 data-scroll-animation="75 100 opacity 0 1" style="opacity: 0;">Sketch UI &amp; Prototype interactions all in one app</h3>
                             </div>
@@ -102,8 +102,8 @@
                         <div class="row" id="aniSecondRow">
                             <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">
                                 <div data-scroll-animation="10 20">You first have to convert your sketch  to wireframes</div>
-                                <div data-scroll-animation="15 20 opacity 0 1" style="opacity: 0;">
-                                    <div data-scroll-animation="25 30">WELL THESE DAYS ARE GONE!</div>
+                                <div data-scroll-animation="25 30 opacity 0 1" style="opacity: 0;">
+                                    <div data-scroll-animation="25 40">WELL THESE DAYS ARE GONE!</div>
                                 </div>
                             </div>
                             <div class="col-md-5 col-sm-12 col-xs-12 icons">
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="row" id="aniThridRow" data-scroll-animation="10 20 top 0 -236 {x}px">
-                            <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc" data-scroll-animation="15 20">And then get another app to build a clickable prototype</div>
+                            <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc" data-scroll-animation="15 24">And then get another app to build a clickable prototype</div>
                             <div class="col-md-5 col-sm-12  col-xs-12 icons">
                                 <img class="icon" src="img/icon-prototype.svg" alt="" data-scroll-animation="25 30"/>
                                 <div data-scroll-animation="25 30 opacity 0 1|30 60 border-width 5 50 {x}px|30 60 top 0 -50 {x}px" style="border: 5px solid white; border-radius: 50%; width: 330px; height: 330px; position: absolute; top: 0px; left: 78px; opacity: 0;"></div>
@@ -128,10 +128,39 @@
       </section>  
       <!-- end of #uid8-icons -->
 
+      <section id="icons-uid8-mobile">
+        <div class="container">
+          <div class="row wow fadeIn" id="aniFirstRow">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">Drawing UI on paper is just the beginning...</div>
+            <div class="col-md-5 col-sm-12  col-xs-12 icons">
+              <img class="icon" src="img/icon-draw.svg" alt="" />
+              <p>Paper sketching</p>
+            </div>
+            <div class="col-md-1 hidden-sm hidden-xs">
+              <img class="arrow" src="img/arrow-down.png" alt="" />
+            </div>
+          </div>
+          <div class="row wow fadeIn" id="aniSecondRow">
+            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">You first have to convert your sketch  to wireframes</div>
+            <div class="col-md-5 col-sm-12  col-xs-12 icons"><img class="icon" src="img/icon-wireframe.svg" alt="" /><p>Wireframing / HIFI</p></div>
+            <div class="col-md-1 hidden-sm hidden-xs">
+              <img class="arrow" src="img/arrow-down.png" alt="" />
+            </div>
+          </div>
+          <div class="row wow fadeIn" id="aniThridRow">
+            <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc">And then get another app to build a clickable prototype</div>
+            <div class="col-md-5 col-sm-12  col-xs-12 icons"><img class="icon" src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
+          </div>
+
+        </div>
+      </section> 
+
       <section id="meet-uid8">
         <div class="container">
-          <!--<h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>-->
-          <!--<h3>Sketch UI &amp; Prototype interactions all in one app</h3>-->
+          <div id="meet-uid8-mobile">
+            <h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
+            <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
+          </div>
           
           <div class="row gallery-container">
             <div class="gallery-feature active" id="ico-pencil">
@@ -413,14 +442,14 @@
             </div>
                         
             <div class="row">
-              <form class="newsletter" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+              <form class="newsletter" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" >
                 <div class="col-md-4">
-                  <input type="text" required="required" placeholder="your name" />
+                  <input type="text" required="required" placeholder="your name">
                 </div>
                 <div class="col-md-4 col-md-offset-2">
-                  <input type="email" required="required" data-validation="required|email" placeholder="your email" />
+                  <input type="email" required="required" data-validation="required|email" name="email" placeholder="your email">
                   <input type="hidden" name="campaign_token" value="n4BFG">
-                  <input type="hidden" name="thankyou_url" value="http://uid8.net/thanks.html">
+                  <input type="hidden" name="thankyou_url" value="http://uid8app.com/thanks.html">
                   <input type="hidden" name="forward_data" value="">
                 </div>
                 <div class="col-md-2">
@@ -483,7 +512,18 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-
+    $(document).ready(function() {
+    var OSName="Unknown OS";
+  if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+  if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+  if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+  if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+      if(OSName == "Windows") {
+       console.log($(".wrapper"));
+        //$(".wrapper").css('background-color', '#4688fa !important;');
+        $('.wrapper').addClass('WindowsChrome');
+      }
+    });
     </script>
     <script src="js/main.js"></script>
   </body>
