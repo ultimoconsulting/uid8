@@ -12,7 +12,6 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/wow.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -81,67 +80,58 @@
       </section>  
       <!-- end of #bin -->
 
-      <section id="icons-uid8">
-        <div class="container">
-          <div class="row wow fadeIn" id="aniFirstRow">
-            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">Drawing UI on paper is just the beginning...</div>
-            <div class="col-md-5 col-sm-12  col-xs-12 icons">
-              <img class="icon" src="img/icon-draw.svg" alt="" />
-              <p>Paper sketching</p>
+      <section id="icons-uid8" data-scroll-animation-element="wrapper">
+            <div class="container" data-scroll-animation-element="container">
+                <div data-scroll-animation="30 60 transform 1 0.17 scale({x})" style="transform-origin: 65% 30%;">
+                    <div class="row" id="aniFirstRow">
+                        <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc" data-scroll-animation="0 20">Drawing UI on paper is just the beginning...</div>
+                        <div class="col-md-5 col-sm-12  col-xs-12 icons">
+                            <img class="icon" src="img/icon-draw.svg" alt="" data-scroll-animation="25 30"/>
+                            <div data-scroll-animation="25 30 opacity 0 1|30 60 border-width 5 50 {x}px" style="border: 5px solid white; border-radius: 50%; width: 330px; height: 330px; position: absolute; top: 0px; left: 78px; opacity: 0;"></div>
+                            <div class="animation-logo" data-scroll-animation="60 75 opacity 0 1" style="opacity: 1; position: absolute;transform: scale(5.48);width: 950px;top: 395px;right: 759px;">
+                                <h2><p data-scroll-animation="75 100 opacity 0 1" style="opacity: 0; display: inline">Meet </p><img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
+                                <h3 data-scroll-animation="75 100 opacity 0 1" style="opacity: 0;">Sketch UI &amp; Prototype interactions all in one app</h3>
+                            </div>
+                            <p data-scroll-animation="0 2">Paper sketching</p>
+                        </div>
+                        <div class="col-md-1 hidden-sm hidden-xs">
+                            <img class="arrow" src="img/arrow-down.png" alt="" data-scroll-animation="0 5"/>
+                        </div>
+                    </div>
+                    <div style="position: relative;" data-scroll-animation="0 10 top 0 -239 {x}px">
+                        <div class="row" id="aniSecondRow">
+                            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">
+                                <div data-scroll-animation="10 20">You first have to convert your sketch  to wireframes</div>
+                                <div data-scroll-animation="15 20 opacity 0 1" style="opacity: 0;">
+                                    <div data-scroll-animation="25 30">WELL THESE DAYS ARE GONE!</div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-12 col-xs-12 icons">
+                                <img class="icon" src="img/icon-wireframe.svg" alt="" data-scroll-animation="20 25"/>
+                                <p data-scroll-animation="10 12">Wireframing / HIFI</p>
+                            </div>
+                            <div class="col-md-1 hidden-sm hidden-xs">
+                                <img class="arrow" src="img/arrow-down.png" alt="" data-scroll-animation="10 15"/>
+                            </div>
+                        </div>
+                        <div class="row" id="aniThridRow" data-scroll-animation="10 20 top 0 -236 {x}px">
+                            <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc" data-scroll-animation="15 20">And then get another app to build a clickable prototype</div>
+                            <div class="col-md-5 col-sm-12  col-xs-12 icons">
+                                <img class="icon" src="img/icon-prototype.svg" alt="" data-scroll-animation="25 30"/>
+                                <div data-scroll-animation="25 30 opacity 0 1|30 60 border-width 5 50 {x}px|30 60 top 0 -50 {x}px" style="border: 5px solid white; border-radius: 50%; width: 330px; height: 330px; position: absolute; top: 0px; left: 78px; opacity: 0;"></div>
+                                <p data-scroll-animation="18 20">Prototyping</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-1 hidden-sm hidden-xs">
-              <img class="arrow" src="img/arrow-down.png" alt="" />
-            </div>
-          </div>
-          <div class="row wow fadeIn" id="aniSecondRow">
-            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">You first have to convert your sketch  to wireframes</div>
-            <div class="col-md-5 col-sm-12  col-xs-12 icons"><img class="icon" src="img/icon-wireframe.svg" alt="" /><p>Wireframing / HIFI</p></div>
-            <div class="col-md-1 hidden-sm hidden-xs">
-              <img class="arrow" src="img/arrow-down.png" alt="" />
-            </div>
-          </div>
-          <div class="row wow fadeIn" id="aniThridRow">
-            <div class="col-md-3 col-md-offset-3 col-sm-12  col-xs-12 desc">And then get another app to build a clickable prototype</div>
-            <div class="col-md-5 col-sm-12  col-xs-12 icons"><img class="icon" src="img/icon-prototype.svg" alt="" /><p>Prototyping</p></div>
-          </dsiv>
-          
-          <!-- test for animation -->
-          <!--
-          <div class="row animation">
-            <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc">
-              Well these days are gone!
-            </div>
-            <div class="col-md-5 col-sm-12  col-xs-12 icons">
-              <div id="ani-1st"><img src="img/icon-draw.svg" alt="" /></div>
-              <div id="ani-2nd"><img src="img/icon-wireframe.svg" alt="" /></div>
-              <div class="in-view" id="ani-3rd"><img src="img/icon-prototype.svg" alt="" /></div>
-              <div id="ani-8">
-                
-                <svg width="290px" height="564px" viewBox="0 0 290 564" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>Icon 8</title>
-                  <desc></desc>
-                  <defs></defs>
-                  <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g id="UID8" transform="translate(-784.000000, -5334.000000)" stroke-width="14.6999998" fill="#4893FF">
-                          <g id="Group-34" transform="translate(929.000000, 5615.500000) rotate(90.000000) translate(-929.000000, -5615.500000) translate(654.500000, 5478.500000)">
-                              <ellipse id="Oval-37-Copy-7" stroke="#FFFFFF" transform="translate(137.824815, 136.845238) rotate(90.000000) translate(-137.824815, -136.845238) " cx="137.824815" cy="136.845238" rx="136.824815" ry="136.845238"></ellipse>
-                              <path d="M411.824815,273.690476 C487.391074,273.690476 548.64963,212.422776 548.64963,136.845238 C548.64963,61.2677 487.391074,6.82121026e-13 411.824815,6.82121026e-13 C336.258556,6.82121026e-13 275,61.2677 275,136.845238 C275,212.422776 336.258556,273.690476 411.824815,273.690476 Z" id="Oval-37-Copy-9" stroke="#FBFAF8" transform="translate(411.824815, 136.845238) rotate(90.000000) translate(-411.824815, -136.845238) "></path>
-                          </g>
-                      </g>
-                  </g>
-              </svg>
-              </div>
-            </div>
-          </div>
-          -->
-        </div>
       </section>  
       <!-- end of #uid8-icons -->
 
       <section id="meet-uid8">
         <div class="container">
-          <h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
-          <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
+          <!--<h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>-->
+          <!--<h3>Sketch UI &amp; Prototype interactions all in one app</h3>-->
           
           <div class="row gallery-container">
             <div class="gallery-feature active" id="ico-pencil">
@@ -458,7 +448,7 @@
             </div>
           </div>
         </div>
-      </section>   
+      </section>
       <!-- end of #thinkdraw -->
 
       <footer>
@@ -489,11 +479,12 @@
     
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-     
+
     </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
