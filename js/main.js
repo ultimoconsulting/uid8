@@ -176,8 +176,6 @@ $(function () {
 		},
 		refresh: function () {
 			var animationPercentage = this.getAnimationPercentage();
-
-			console.log(animationPercentage);
 			if (animationPercentage > 0 && animationPercentage < 100) {
 				this.fixContainer();
 				this.setAnimationFrame(animationPercentage);
@@ -213,7 +211,6 @@ $(function () {
 			this.$wrapper = $wrapper;
 			this.$container = $container;
 			this.animations = this.getAnimations(dataParam);
-			console.log(this.animations);
 		},
 		getAnimationBoundaries: function () {
 			var $container = this.$container,
@@ -260,7 +257,13 @@ $(function () {
 });
 
 (function () {
-	/*** end adjustVideo() ***/
+	function positionNarration() {
+		var smietnikHeight = $('#vid-smietnik').height();
+		$('.seconddesc').css('margin-top', smietnikHeight-250 +'px');
+		$('.thirddesc').css('margin-top', '0px');
+	}
+
+	
 	function adjustVideo() {
 		var wWidth = $(window).width();
 		//standard tablet
@@ -277,7 +280,7 @@ $(function () {
 			$('#vid-smietnik').get(0).load();
 		}
 	}
-
+	/*** end adjustVideo() ***/
 
 	var videoStarted = false;
 	var tolerancePixel = 40;
@@ -312,14 +315,15 @@ $(function () {
 //reposition text depending on screen width
 	$(window).resize(function() {
 		adjustVideo();
-		var smietnikHeight = $('#vid-smietnik').height();
-		$('.2nddsec').css('margin-top', smietnikHeight-250 +'px');
+		positionNarration();
 	});
 
 
 	/*** start $(document).ready() ***/
 	$(document).ready(function() {
+
 		adjustVideo();
+		positionNarration();
 		var currentActive; var nextActive; var previousActive;
 
 		//currect active feature in meet uid8

@@ -109,7 +109,7 @@ h1 .fancy-green {
 }
 
 #meet-uid8 {
-	margin-top: 2em;
+	margin-top: 5em;
 }
 /****** START: Header *****/
 
@@ -202,13 +202,13 @@ header .download .btn {
 
 header .download .logo img {
 	width: 17px;
+	margin-top: -2px;
 }
 
 
 /****** START: #Bin *****/
 
 #bin {
-	margin-top: 5em;
 	position: relative;
 }
 
@@ -277,37 +277,11 @@ header .download .logo img {
 
 #icons-uid8.animation-end .container {
 	position: absolute;
-	bottom: -244px;
+	bottom: 0px;
 	left: 50%;
 	margin-left: -585px;
 }
 
-
-#icons-uid8 #aniFirstRow {
-	position: relative;
-	z-index: 10;
-
-	-moz-transform: translate3d(0px, 0px, 0px);
-  	-webkit-transform: translate3d(0px, 0px, 0px);
-  	-o-transform: translate(0px, 0px);
-  	-ms-transform: translate(0px, 0px);
-  	transform: translate3d(0px, 0px, 0px);
-}
-
-#icons-uid8 #aniFirstRow.in-view {
-	-moz-transition: all 700ms ease-out;
-	-webkit-transition: all 700ms ease-out;
-	-o-transition: all 700ms ease-out;
-  	transition: all 700ms ease-out;
-  	-moz-transform: translate3d(0px, 165px, 0px);
-  	-webkit-transform: translate3d(0px, 165px, 0px);
-  	-o-transform: translate(0px, 165px);
-  	-ms-transform: translate(0px, 165px);
-  	transform: translate3d(0px, 165, 0px);
-  	-webkit-backface-visibility: hidden;
-  	-moz-backface-visibility: hidden;
-  	backface-visibility: hidden;
-}
 
 #icons-uid8 #aniSecondRow {
 	position: relative;
@@ -328,7 +302,7 @@ header .download .logo img {
     justify-content: center;
 }
 
-#icons-uid8 .icons {
+#icons-uid8 .icons, #icons-uid8-mobile .icons  {
 	font-family: 'GalanoGrotesque-Medium'; 
 	font-size: 0.5em;
 	margin-bottom: 2em;
@@ -336,7 +310,15 @@ header .download .logo img {
 	text-transform: uppercase;
 }
 
-#icons-uid8 .icons p { 
+#icons-uid8 h2 {
+	text-transform: initial;
+}
+
+#icons-uid8 h3 {
+	margin-top: 45px;
+}
+
+#icons-uid8 .icons p, #icons-uid8-mobile .icons p { 
 	margin-top: 1em;
 }
 
@@ -362,9 +344,8 @@ header .download .logo img {
 	
 }
 
-#icons-uid8 .animation #ani-1st img, #icons-uid8 .animation #ani-2nd img, 
-#icons-uid8 .animation #ani-3rd img, #icons-uid8 .animation #ani-8 img {
-	
+#icons-uid8-mobile .icon {
+	max-width: 280px;
 }
 
 #icons-uid8 .animation #ani-1st {
@@ -571,11 +552,16 @@ header .download .logo img {
 
 #meet-uid8-mobile {
 	display: none;
+	margin-bottom: -3em;
 }
 
-#meet-uid8-mobile h2 {
-	    letter-spacing: 12px;
-    text-transform: uppercase;
+#meet-uid8-mobile h2 img {
+	margin-left: 0.2em;
+}
+
+#meet-uid8-mobile h3 {
+	text-transform: uppercase;
+	margin-top: 1em;
 }
 
 /****** START: #inspirations *****/
@@ -599,6 +585,7 @@ header .download .logo img {
 	color: #fff;
 	padding: 0.5em 1em;
 	width: 100%;
+	height: 4em;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -710,7 +697,7 @@ header .download .logo img {
 }
 
 #thinkdraw .download .logo img {
-	margin-top: -2px;
+	margin-top: -4px;
 }
 
 /****** END: #thinkdraw *****/
@@ -723,7 +710,7 @@ footer {
 	align-items: center;
     background-color: #3E64CF;
     display: flex;
-    height: 100px;
+    height: 115px;
     justify-content: center;
 }
 
@@ -735,6 +722,10 @@ footer ul li {
 footer  a {
 	color: #fff;
 	
+}
+
+footer .icons {
+	margin-top: -4px;
 }
 
 /****** END: footer *****/
@@ -807,6 +798,10 @@ footer  a {
 	}
 	#meet-uid8-mobile {
 		display: block;
+	}
+
+	#meet-uid8-mobile .prolog {
+		margin: 4em auto;
 	}
 }
 

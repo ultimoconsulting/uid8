@@ -11,8 +11,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/uid8.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/wow.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,7 +31,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-2 col-sm-2 col-xs-3">
-              <a href="/uid8"><img src="img/logo.svg" alt="UID8" /></a>
+              <a href="/"><img src="img/logo.svg" alt="UID8" /></a>
             </div>
             <div class="col-md-2 col-sm-6 col-xs-6 pull-right text-right download">
               <a href="#" class="btn" role="button">
@@ -47,33 +49,30 @@
           </div>
         </div>
         <div class="container-fluid">  
-          <div class="row">
-          <!--<img src="video/reka.gif" alt="" width="100%" />
-                        <source src="video/reka.webm" type="video/webm">-->
+          <div class="row video">
             <video id="vid-kartki" poster="img/reka4.png" class="bgvid" muted preload="none">
               <source src="video/reka4.mp4" type="video/mp4">
             </video>
-            
           </div>
         </div>  
       </header>  
         
       <section id="bin" class="wow">
         <div class="container-fluid">  
-          <div class="row">
+          <div class="row video">
             <video id="vid-smietnik" poster="img/kosz.png" class="bgvid" muted preload="none">
               <source src="video/kosz1.mp4" type="video/mp4">
             </video>
           </div>
         </div>  
         <div class="container desc">
-          <div class="row 1stdesc">
+          <div class="row firstdesc">
             <div class="col-md-6 col-md-offset-6 col-sm-12  col-xs-12 fancy-green rotate-right ">sometimes repetitevely until...</div>
           </div>
-          <div class="row 2nddsec">
+          <div class="row seconddesc">
             <div class="col-md-6 hidden-sm hidden-xs fancy-green rotate-left text-right">YOU Got it right!</div>
           </div>
-          <div class="row 3rddsec">
+          <div class="row thirddesc">
             <div class="col-md-6 col-md-offset-6 hidden-sm hidden-xs fancy-green rotate-right text-center">BUT!</div>
           </div>
         </div>
@@ -81,15 +80,15 @@
       <!-- end of #bin -->
 
       <section id="icons-uid8" data-scroll-animation-element="wrapper">
-            <div class="container" data-scroll-animation-element="container">
+            <div id="icons-container" class="container" data-scroll-animation-element="container" style="height: 903px;">
                 <div data-scroll-animation="30 60 transform 1 0.17 scale({x})" style="transform-origin: 65% 30%;">
                     <div class="row" id="aniFirstRow">
                         <div class="col-md-3 col-md-offset-3 col-sm-12 col-xs-12 desc" data-scroll-animation="0 20">Drawing UI on paper is just the beginning...</div>
                         <div class="col-md-5 col-sm-12  col-xs-12 icons">
-                            <img class="icon" src="img/icon-draw.svg" alt="" data-scroll-animation="25 30"/>
+                            <img class="icon" src="img/icon-draw.svg" alt="" data-scroll-animation="25 30" style="position: relative; z-index: 10;"/>
                             <div data-scroll-animation="25 30 opacity 0 1|30 60 border-width 5 50 {x}px" style="border: 5px solid white; border-radius: 50%; width: 330px; height: 330px; position: absolute; top: 0px; left: 78px; opacity: 0;"></div>
-                            <div class="animation-logo" data-scroll-animation="60 75 opacity 0 1" style="opacity: 0; position: absolute;transform: scale(5.48);width: 950px;top: 395px;right: 838px;">
-                                <h2><p data-scroll-animation="75 100 opacity 0 1" style="opacity: 0; display: inline">Meet </p><img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
+                            <div class="animation-logo" data-scroll-animation="60 75 opacity 0 1" style="opacity: 0; position: absolute;transform: scale(5.48);width: 950px;top: 452px;right: 820px;">
+                                <h2><p data-scroll-animation="75 100 opacity 0 1" style="opacity: 0; display: inline; padding-right: 0.2em">Meet </p><img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
                                 <h3 data-scroll-animation="75 100 opacity 0 1" style="opacity: 0;">Sketch UI &amp; Prototype interactions all in one app</h3>
                             </div>
                             <p data-scroll-animation="0 2">Paper sketching</p>
@@ -158,6 +157,7 @@
       <section id="meet-uid8">
         <div class="container">
           <div id="meet-uid8-mobile">
+            <div class="fancy-green rotate-right prolog">These days are gone</div>
             <h2>Meet <img src="img/logo-uid8-bg.svg" alt="UID8" /></h2>
             <h3>Sketch UI &amp; Prototype interactions all in one app</h3>
           </div>
@@ -437,7 +437,7 @@
                 <img src="img/arrow-horizontal.svg" alt="" />
               </div>
               <div class="col-md-5 col-sm-12 button-draw">
-                <img src="img/btn-designers-draw.png" alt="Designers draw" />
+                <a href="https://designersdraw.com/"><img src="img/btn-designers-draw.png" alt="Designers draw" /></a>
               </div>
             </div>
                         
@@ -446,7 +446,7 @@
                 <div class="col-md-4">
                   <input type="text" required="required" placeholder="your name">
                 </div>
-                <div class="col-md-4 col-md-offset-2">
+                <div class="col-md-4">
                   <input type="email" required="required" data-validation="required|email" name="email" placeholder="your email">
                   <input type="hidden" name="campaign_token" value="n4BFG">
                   <input type="hidden" name="thankyou_url" value="http://uid8app.com/thanks.html">
@@ -485,18 +485,18 @@
           <div class="row">
             <div class="col-md-4 col-sm-6 text-left">
               <ul class="footer-list">
-                <li><a href="faq.html">FAQ</a></li>
+                <!--<li><a href="#">FAQ</a></li>-->
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
             </div>
             <div class="col-md-4 hidden-sm hidden-xs text-center">
-              <span>Made with $$ by your friends from <a href="#">Ultimo</a>.</span>
+              <span>Made with &#9825; by your friends from <a href="#">Ultimo</a>.</span>
             </div>
-            <div class="col-md-4 col-sm-6 text-right">
+            <div class="col-md-4 col-sm-6 text-right icons">
               <ul class="footer-list">
-                <li><a href="#"><img src="img/ico-dribble.svg" alt="Dribble"></a></li>
-                <li><a href="#"><img src="img/ico-medium.svg" alt="Medium"></a></li>
+                <li><a href="https://dribbble.com/uid8app"><img src="img/ico-dribble.svg" alt="Dribble"></a></li>
+                <li><a href="https://medium.com/designers-draw"><img src="img/ico-medium.svg" alt="Medium"></a></li>
                 <li><a href="https://twitter.com/uid8app"><img src="img/ico-twitter.svg" alt="Twitter"></a></li>
                 <li><a href="https://www.facebook.com/uid8app/"><img src="img/ico-facebook.svg" alt="Facebook"></a></li>
               </ul>
@@ -513,6 +513,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
     $(document).ready(function() {
+
     var OSName="Unknown OS";
   if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
   if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
