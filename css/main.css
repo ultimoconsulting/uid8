@@ -109,7 +109,7 @@ h1 .fancy-green {
 }
 
 #meet-uid8 {
-	margin-top: 5em;
+	margin-top: 7em;
 }
 /****** START: Header *****/
 
@@ -146,10 +146,10 @@ h1 .fancy-green {
 }
 
 .download .logo {
-	 display: table-cell;
-	 margin-top: -1px;
-	 padding-left: 1.5em;
-	 vertical-align: middle;
+	display: table-cell;
+	margin-top: -1px;
+	padding-left: 2.5em;
+	vertical-align: middle;
 }
 
 /****** END: Download Button *****/
@@ -214,6 +214,15 @@ header .download .logo img {
 
 #bin video {
 	width: 100%;
+}
+
+#bin .poster {
+	display: none;
+}
+
+#bin .poster img {
+	width: 160%; 
+	margin-left: -30%;
 }
 
 #bin .desc {
@@ -293,13 +302,15 @@ header .download .logo img {
 	z-index: 10;
 }
 
-#icons-uid8 .desc
+
+#icons-uid8 .desc, #icons-uid8-mobile .desc
 {
 	align-items: center;
     display: flex;
     font-size: 1.1em;
     height: 320px;
     justify-content: center;
+    text-align: left;
 }
 
 #icons-uid8 .icons, #icons-uid8-mobile .icons  {
@@ -322,7 +333,7 @@ header .download .logo img {
 	margin-top: 1em;
 }
 
-#icons-uid8 .arrow {
+#icons-uid8 .arrow, #icons-uid8-mobile .arrow {
 	margin-left: -3em;
 	position: relative;
 	top: 10em;
@@ -359,21 +370,6 @@ header .download .logo img {
   	transform: translate3d(0px, 0px, 0px);
 }
 
-#icons-uid8 .animation #ani-1st.in-view {
- 	-moz-transition: all 700ms ease-out;
-	-webkit-transition: all 700ms ease-out;
-	-o-transition: all 700ms ease-out;
-  	transition: all 700ms ease-out;
-  	-moz-transform: translate3d(0px, 190px, 0px);
-  	-webkit-transform: translate3d(0px, 190px, 0px);
-  	-o-transform: translate(0px, 190px);
-  	-ms-transform: translate(0px, 190px);
-  	transform: translate3d(0px, 190, 0px);
-  	-webkit-backface-visibility: hidden;
-  	-moz-backface-visibility: hidden;
-  	backface-visibility: hidden;
-}
-
 #icons-uid8 .animation #ani-2nd {
 	top: 350px;
 	z-index: 5;
@@ -392,22 +388,6 @@ header .download .logo img {
   	transform: translate3d(0px, 0px, 0px);
 }
 
-
-
-#icons-uid8 .animation #ani-3rd.in-view {
- 	-moz-transition: all 700ms ease-out;
-	-webkit-transition: all 700ms ease-out;
-	-o-transition: all 700ms ease-out;
-  	transition: all 700ms ease-out;
-  	-moz-transform: translate3d(0px, -190px, 0px);
-  	-webkit-transform: translate3d(0px, -190px, 0px);
-  	-o-transform: translate(0px, -190px);
-  	-ms-transform: translate(0px, -190px);
-  	transform: translate3d(0px, -190, 0px);
-  	-webkit-backface-visibility: hidden;
-  	-moz-backface-visibility: hidden;
-  	backface-visibility: hidden;
-}
 
 #icons-uid8 .animation .desc {
 	height: 1100px;
@@ -493,7 +473,8 @@ header .download .logo img {
 }
 
 #meet-uid8 .gallery-container {
-	
+	max-width: 970px;
+	margin: 0 auto;
 }
 
 #meet-uid8 .arrow-back,  #meet-uid8 .arrow-next {
@@ -501,7 +482,7 @@ header .download .logo img {
 }
 
 #meet-uid8 .gallery-feature {
-	width: 14%;
+	width: 16%;
 	float: left;
 	cursor: pointer;
 }
@@ -517,6 +498,11 @@ header .download .logo img {
 	padding-bottom: 2px;
 }
 
+#meet-uid8 .gallery-feature .desc div {
+    max-width: 140px;
+    margin-top: 0 auto;
+}
+
 #meet-uid8 .gallery-feature .desc p {
 	display: none;
 }
@@ -524,6 +510,12 @@ header .download .logo img {
 #meet-uid8 .gallery-feature.active .icon path, #meet-uid8 .gallery-feature.active .icon polygon,
 #meet-uid8 .gallery-feature.active .icon polyline {
 	stroke: #67E5C1;
+}
+
+#meet-uid8 .big-desc p {
+	font-size: 1.5em;
+    margin-top: 2.5em;
+    height: 100px;
 }
 
 #meet-uid8 #pic-pencil {
@@ -564,6 +556,10 @@ header .download .logo img {
 	margin-top: 1em;
 }
 
+#meet-uid8-mobile .prolog {
+	margin-bottom: 3em;
+}
+
 /****** START: #inspirations *****/
 
 #inspirations {
@@ -588,42 +584,55 @@ header .download .logo img {
 	height: 4em;
 }
 
-::-webkit-input-placeholder { /* Chrome */
-	color: #fff;
-	transition: opacity 250ms ease-in-out;
+#inspirations .field {
+	position: relative;
 }
 
-:focus::-webkit-input-placeholder {
+#inspirations .field label {
+	position: absolute;
+	top: 1.35em;
+	left: 2.2em;
 	opacity: 0.5;
 }
 
-:-ms-input-placeholder { /* IE 10+ */
-	color: #fff;
-	transition: opacity 250ms ease-in-out;
+#inspirations .error {
+	color: #fff466;
+	display: none;
 }
 
-:focus:-ms-input-placeholder {
-	opacity: 0.5;
+#inspirations form .field input[type="text"]:focus,
+#inspirations form .field input[type="email"]:focus {
+	border: 1px solid #4c95fb;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
-	color: #fff;
- 	opacity: 1;
- 	transition: opacity 250ms ease-in-out;
+#inspirations form .field input[type="text"]:focus + label,
+#inspirations form .field input[type="email"]:focus + label {
+  opacity: 0;
 }
 
-:focus::-moz-placeholder {
-	opacity: 0.5;
+#inspirations form .field input[type="text"]:valid,
+#inspirations form .field input[type="email"]:valid {
+	border: 1px solid #67e5c1;
 }
 
-:-moz-placeholder { /* Firefox 4 - 18 */
-	color: #fff;
-	opacity: 1;
-	transition: opacity 250ms ease-in-out;
+#inspirations form .field input[type="text"]:valid + label,
+#inspirations form .field input[type="email"]:valid + label {
+  opacity: 0;
 }
 
-:focus:-moz-placeholder {
-	opacity: 0.5;
+#inspirations form .field input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+#inspirations form .field input[type="email"]:invalid:not(:focus):not(:placeholder-shown) {
+  border: 1px solid #fff466;
+}
+
+#inspirations form .field input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + div.error,
+#inspirations form .field input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + div.error {
+  opacity: 1;
+}
+
+#inspirations form .field input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label,
+#inspirations form .field input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label {
+  opacity: 0;
 }
 
 #inspirations button {
@@ -641,6 +650,12 @@ header .download .logo img {
 #inspirations .newsletter {
 	margin-top: 10em;
 	margin-bottom: 10em;
+}
+
+#inspirations .thanks {
+	margin-top: 3.334em;
+	margin-bottom: 3.334em;
+	display: none;
 }
 
 /****** END: #inspirations *****/
@@ -677,23 +692,40 @@ header .download .logo img {
 	z-index: 1;
 }
 
+#iPad .desktop {
+	margin-top: 20px;
+}
+
 /****** START: #thinkdraw *****/
 
+#thinkdraw {
+	position: relative;
+}
+
+#thinkdraw #hand {
+	position: absolute;
+	top: -160px;
+	left: 800px;
+}
+
 #thinkdraw h2 {
-	color: #3E64CF;
-	font-family: 'KGLifeisMessy';
-	font-size: 3em;
+	font-size: 5em;
+	font-family: 'GalanoGrotesque-Bold';
 	margin-top: 2em;
 	text-align: center;
 }
 
 #thinkdraw .download {
 	font-size: 2em;
-	margin: 3em auto;
+	margin: 2em auto 5em auto;
 }
 
 #thinkdraw .download .desc {
 	font-size: 2.2em;
+}
+
+#thinkdraw .download a {
+	background-color: #4c95fb;
 }
 
 #thinkdraw .download .logo img {
@@ -712,6 +744,8 @@ footer {
     display: flex;
     height: 115px;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 }
 
 footer ul li {
@@ -734,19 +768,37 @@ footer .icons {
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
 
-/* video background fix */
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    body
-    {
-        background: #4c95fb;
-    }
-}
+
 
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
+	
+	#icons-uid8 {
+    	display: none;
+    }
 
+    #icons-uid8-mobile {
+    	text-align: center;
+    	display: block;
+    }
+
+    #icons-uid8-mobile .row {
+    	margin: 1.5em auto;
+    }
+
+    #icons-uid8-mobile .desc {
+    	margin-bottom: 0.5em;
+    }
+
+    #meet-uid8-mobile {
+    	display: block;
+    }
+
+	#thinkdraw #hand {
+		left: 690px;
+	}
 
 }
 
@@ -756,20 +808,7 @@ footer .icons {
 		background: none!important;
 	}
 
-    #icons-uid8 {
-    	text-align: center;
-    	display: none;
-    }
-
-    #icons-uid8-mobile {
-    	text-align: center;
-    	display: block;
-    }
-
-    #icons-uid8 .desc {
-    	height: auto;
-    }
-
+    
     #inspirations h2, #inspirations .button-draw {
     	text-align: center;
     }
@@ -790,9 +829,16 @@ footer .icons {
 		text-align: center;
 	}
 
-	#icons-uid8 .animation .desc {
-		height: 100px;
+	#icons-uid8-mobile {
+		text-align: center;
+		margin-top: 0;
 	}
+
+	#icons-uid8-mobile .desc {
+		height: auto;
+		text-align: center;
+	}
+	
 	#meet-uid8 {
 		top: 0;
 	}
@@ -801,17 +847,16 @@ footer .icons {
 	}
 
 	#meet-uid8-mobile .prolog {
-		margin: 4em auto;
+		margin: -1em auto 3em auto;
+	}
+
+	#thinkdraw #hand {
+		left: 430px;
 	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px) {
-	/*
-	body {
-		background-color: #4688f9;
-	}
-*/	
 
 	header .container .row {
 		padding: 0 2em;
@@ -826,6 +871,13 @@ footer .icons {
     	top: -5em;
     }
 
+     #bin .video {
+    	display: none;
+    }
+
+    #bin .poster {
+    	display: block;
+    }
 
     #meet-uid8 .gallery-feature {
     	width: 33%;
@@ -835,13 +887,24 @@ footer .icons {
     #meet-uid8 .gallery-feature:nth-of-type(7) {
     	width: 100%;
     }
+    #meet-uid8 .gallery-feature .desc div {
+    	max-width: 100%;
+	}
 
-    #icons-uid8 img.icon, #icons-uid8 svg {
+    #uid8 img.icon, #icons-uid8 svg {
     	width: 50%;
     }
 
-    #ani-8 svg {
-    	fill: #4688f9;
+    footer .col-xs-12 {
+    	text-align: center;
+    }
+
+    footer .icons {
+    	margin-top: 1em;
+    }
+
+    footer ul {
+    	padding-left: 0;
     }
 }
 
@@ -856,6 +919,9 @@ footer .icons {
     	font-size: 4.5em;
     }
 
+    header .container .row {
+    	padding: 0 1em;
+	}
 
     #bin .desc .row:nth-of-type(1) {
     	left: 0;
@@ -865,6 +931,8 @@ footer .icons {
     #bin {
     	padding-top: 10em;
     }
+
+
 
     #icons-uid8 img, #icons-uid8 svg {
     	width: 50%;
@@ -882,11 +950,9 @@ footer .icons {
     	font-size: 3em;
     }
 
-
-
     #meet-uid8 .gallery-container {
     	overflow: hidden;
-    	height: 180px;
+    	height: 200px;
     	position: relative;
     }
 
@@ -923,11 +989,18 @@ footer .icons {
     	top: 0px;
     }    
 
+    
+
     #meet-uid8 .gallery-feature .desc p {
 		display: block;
+		font-size: 1.1em;
 		margin: 0 auto;
 		padding-top: 1em;
 		width: 70%;
+	}
+
+	#meet-uid8 .big-desc p {
+		display: none;
 	}
 
     #meet-uid8 .animation #iPad {
@@ -935,14 +1008,20 @@ footer .icons {
     }
 
     #thinkdraw .download .desc {
-    	font-size: 1.8em;
+    	font-size: 1.6em;
     }
+
+    #thinkdraw #hand {
+		left: 320px;
+	}
+
+
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
-
+	
 }
 
 .WindowsChrome {
@@ -951,4 +1030,13 @@ footer .icons {
 
 video::-webkit-media-controls-start-playback-button {
   display: none !important;
+}
+
+
+/* video background fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    body
+    {
+        background: #4c95fb;
+    }
 }
