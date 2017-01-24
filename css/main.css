@@ -469,7 +469,7 @@ header .download .logo img {
 
 #meet-uid8 h3 {
 	font-size: 2.3em;
-	margin-bottom: 3em;
+	margin: 3em auto;
 }
 
 #meet-uid8 .gallery-container {
@@ -500,7 +500,7 @@ header .download .logo img {
 
 #meet-uid8 .gallery-feature .desc div {
     max-width: 140px;
-    margin-top: 0 auto;
+    margin: 0 auto;
 }
 
 #meet-uid8 .gallery-feature .desc p {
@@ -512,10 +512,18 @@ header .download .logo img {
 	stroke: #67E5C1;
 }
 
+#meet-uid8 .big-desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 80px;
+	text-align: center;
+	margin: 2em auto 0 auto;
+	max-width: 970px;
+}
+
 #meet-uid8 .big-desc p {
 	font-size: 1.5em;
-    margin-top: 2.5em;
-    height: 100px;
 }
 
 #meet-uid8 #pic-pencil {
@@ -661,40 +669,41 @@ header .download .logo img {
 /****** END: #inspirations *****/
 
 
-#iPad {
-	max-height: 803px;
-	max-width: 1096px;
-	overflow: hidden;
-	position: relative;
-}
+.carousel {
+            max-height: 803px;
+            overflow: hidden;
+            position: relative;
+          }
+          .carousel video {
+            width: 74.2%;
+            margin-top: 8.7%;
+            margin-bottom: 8%;
+          }
+          .carousel .tablet {
+            background: url('../img/bg-ipad.png') no-repeat ;
+            background-size: cover;
+          }
 
-#iPad .cover {
-	position: relative;
-	z-index: 100;
-}
+          .carousel .desktop {
+            background: url('../img/macbook2.png') no-repeat ;
+            background-size: contain;
+          }
 
-#iPad .screens {
-	position: absolute;
-	top: 9%;
-	left: 11%;
-	width: 78%;
-	height: 80%;
-	overflow: hidden;
-	z-index: 1;
-}
+          .carousel .desktop video {
+            width: 75%;
+            margin-top: 4%;
+          }
 
-#iPad .screens > div {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	right: 10px;
-	bottom: 10px;
-	z-index: 1;
-}
+          .carousel .active {
+            opacity: 1;
+            display: block;
 
-#iPad .desktop {
-	margin-top: 20px;
-}
+          }
+
+          .carousel > div {
+            opacity: 0;
+            display: none;
+          }
 
 /****** START: #thinkdraw *****/
 
@@ -952,7 +961,7 @@ footer .icons {
 
     #meet-uid8 .gallery-container {
     	overflow: hidden;
-    	height: 200px;
+    	height: 210px;
     	position: relative;
     }
 
@@ -982,7 +991,7 @@ footer .icons {
     	width: 100%;
     	margin-bottom: 4em;
     	position: absolute;
-    	top: 200px;
+    	top: 210px;
     }
 
 	#meet-uid8 .gallery-feature.active {
@@ -1003,7 +1012,11 @@ footer .icons {
 		display: none;
 	}
 
-    #meet-uid8 .animation #iPad {
+    #meet-uid8 .animation .carousel {
+    	display: none;
+    }
+
+    #meet-uid8 .big-desc {
     	display: none;
     }
 

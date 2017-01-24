@@ -263,6 +263,14 @@ $(function () {
 		$('.thirddesc').css('margin-top', '0px');
 	}
 
+	function hideAnimation(){
+			$("#vid-kartki").get(0).pause();
+			$("#vid-smietnik").get(0).pause();
+			$('#icons-uid8').hide();
+			$('#icons-uid8-mobile').show();
+			$('#meet-uid8-mobile').show();
+			$('body').css('background-color', '#4b95fc');
+	}
 	
 	function adjustVideo() {
 		var wWidth = $(window).width();
@@ -289,7 +297,8 @@ $(function () {
 	}
 	/*** end adjustVideo() ***/
 
-	var videoStarted = false;
+	var videoStarted1 = false;
+	var videoStarted2 = false;
 	var tolerancePixel = 40;
 
 	function checkMedia(){
@@ -298,15 +307,31 @@ $(function () {
 		var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
 		var wWidth = $(window).width();
 		var media = $("#vid-smietnik");
+		media.push($("#carousel-any-device"));
 		var is_iPad = navigator.userAgent.match(/iPad/i) != null;
 
 		media.each(function(index, el) {
 			var yTopMedia = $(this).offset().top;
 			var yBottomMedia = $(this).height() + yTopMedia;
-			if(scrollTop < yBottomMedia && scrollBottom > yTopMedia && videoStarted == false && wWidth > 767 && !is_iPad){
+			if(scrollTop < yBottomMedia && scrollBottom > yTopMedia && wWidth > 767) {
 				//view explaination in `In brief` section above
-				$(this).get(0).play();
-				videoStarted = true;
+				if(is_iPad && index != 0) {
+					$(this).get(0).play();
+					videoStarted = true;	
+				}
+
+				if(!is_iPad) {
+					if(index == 0 && videoStarted1 == false) {
+						$(this).get(0).play();
+						videoStarted1 = true;
+					}
+					if(index == 1 && videoStarted2 == false) {
+						$(this).get(0).play();
+						videoStarted2 = true;
+					}
+						
+				}
+				
 			}
 			else {
 				
@@ -333,14 +358,11 @@ $(function () {
 		positionNarration();
 		var currentActive; var nextActive; var previousActive;
 
-		function hideAnimation(){
-			$("#vid-kartki").get(0).pause();
-			$("#vid-smietnik").get(0).pause();
-			$('#icons-uid8').hide();
-			$('#icons-uid8-mobile').show();
-			$('#meet-uid8-mobile').show();
-			$('body').css('background-color', '#4b95fc');
-		}
+		var is_iPad = navigator.userAgent.match(/iPad/i) != null;
+		if(is_iPad) {
+			hideAnimation();
+		} 
+		
 
 		//currect active feature in meet uid8
 		function detectCurrentFreature() {
@@ -375,40 +397,21 @@ $(function () {
 		$('.gallery-feature').click(function(){
 			var id = $(this).attr("id").substr(4);
 			var prevActive = $(".gallery-container").children(".active").attr("id").substr(4);
+			var $clicked = $("#pic-"+id);
+			var $prev = $("#pic-"+prevActive);
+
 
 			if(id != prevActive) {
-				$("#pic-"+id).css("z-index", "50");
-				$("#pic-"+prevActive).fadeTo(1000, 0.1, function(){
-					var desc = $("#ico-"+id).find("p").text();
-					var $currentVideo = $("#pic-"+id).find('video')[0];
-					$currentVideo.currentTime = 0;
-					
-					if(id == "webdemo") {
-						$('.tablet').fadeOut(function(){
-							$(".big-desc").find("p").text(desc);
-							$(".screens > div").not("#pic-"+id).css("z-index", "1");
-							$("#pic-"+id).css("z-index", "100");
-							$("#pic-"+prevActive).fadeTo(0, 1);
-							$("#pic-"+prevActive).find("video")[0].pause();
-							
-							$currentVideo.play();
-						});
-					}
-					else {
-						$('.tablet').fadeIn(function(){
-							$(".big-desc").find("p").text(desc);
-							$(".screens > div").not("#pic-"+id).css("z-index", "1");
-							$("#pic-"+id).css("z-index", "100");
-							$("#pic-"+prevActive).fadeTo(0, 1);
-							$("#pic-"+prevActive).find("video")[0].pause();
-							
-							$currentVideo.play();
-						});
-					}
-
-					
-					
-				});
+				var desc = $("#ico-"+id).find("p").text();
+				var $currentVideo = $("#pic-"+id).find('video')[0];
+				$currentVideo.currentTime = 0;
+				$clicked.css('z-index', 50);
+				$clicked.addClass('active');
+				$prev.removeClass('active');
+				$(".big-desc").find("p").text(desc);
+				$(".screens > div").not("#pic-"+id).css("z-index", "1");
+				$prev.find("video")[0].pause();
+				$currentVideo.play();
 				$(".gallery-feature").removeClass("active");
 				$(this).addClass("active");
 			}
